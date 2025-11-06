@@ -8,10 +8,10 @@ import Image from "next/image";
 
 export default function HomeHero() {
     return (
-        <Section className="bg-clr-bg-light py-size-xl" padded={false}>
+        <Section className="bg-clr-bg-light py-size-xl relative">
             <HeaderHeightPadding />
             <GridBackground />
-            <Section.Content className="relative flex h-screen">
+            <Section.Content className="gap-size-md relative flex">
                 <Heading
                     semantic="h1"
                     className="mx-auto max-w-3xl text-center lg:text-6xl"
@@ -27,12 +27,12 @@ export default function HomeHero() {
                 </Text>
 
                 <div className="flex justify-center gap-4 text-sm tracking-wider">
-                    <Button text="Zamów Audyt" variant="opposite" />
-                    <Button text="Zakup Stronę" />
+                    <Button text="zamów audyt" variant="opposite" />
+                    <Button text="zakup stronę" />
                 </div>
 
                 <div className="p-size-xs rounded-[24px] bg-sky-800/30">
-                    <div className="relative aspect-[1720/1600] w-full overflow-hidden rounded-2xl">
+                    <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl">
                         <Image
                             src={"/test-hero.png"}
                             fill

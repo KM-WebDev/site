@@ -5,7 +5,7 @@ type Heading = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 type variant = "primary" | "secondary" | "base";
 
 const variants: Record<variant, string> = {
-    primary: "text-clr-text-strong",
+    primary: "text-sky-800",
     secondary: "",
     base: "text-clr-text-strong",
 };
@@ -69,7 +69,7 @@ export default function Heading({
     text,
     variant = "base",
 }: HeadingProps) {
-    const Tag = semantic ? semantic : "p";
+    const Tag = semantic ? semantic : "span";
     const styleTarget = styling ? styling : semantic;
     return (
         <Tag

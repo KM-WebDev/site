@@ -19,11 +19,13 @@ export interface ButtonProps {
     href?: string;
     as?: "button" | "link";
     variant?: variant;
+    capitalize?: boolean;
 }
 
 export default function Button({
     children,
     variant = "primary",
+    capitalize = true,
     className: passedClassName,
     href = "/",
     text,
@@ -33,10 +35,11 @@ export default function Button({
     const base =
         "group/button relative flex cursor-pointer items-center justify-center";
     const className =
-        " gap-4 rounded-xl px-6 py-2 text-base font-medium transition-all duration-200";
+        "gap-4 rounded-xl px-6 py-2 text-base font-medium transition-all duration-200";
 
     const combinedClasses = cn(
         variants[variant],
+        capitalize && "capitalize",
         base,
         className,
         passedClassName

@@ -29,9 +29,9 @@ function GeneratedLinks({ linkRenderer }: { linkRenderer: linkRenderer }) {
                     <NavLink
                         closeNavOnClick={true}
                         route={route}
-                        className="text-clr-text cursor-pointer font-medium hover:text-gray-900"
+                        className="text-clr-text-muted cursor-pointer font-medium hover:text-gray-900"
                         activeClassName=""
-                        ctaClassName="px-4 py-1.5 max-lg:mt-5 bg-clr-brand-red w-full flex text-white justify-center rounded-full"
+                        ctaClassName=""
                     />
                 )}
             </li>

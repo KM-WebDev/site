@@ -1,7 +1,7 @@
 "use client";
 
 import { NavigationContext } from "@/context/NavigationProvider";
-import { cn } from "@/lib/utils/cn";
+import { cn } from "@/lib/utils";
 import Hamburger from "hamburger-react";
 import { useContext } from "react";
 

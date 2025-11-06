@@ -1,42 +1,32 @@
-import { cn } from "@/lib/utils/cn";
+import { cn } from "@/lib/utils";
+import { ReactNode } from "react";
 
 type Heading = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 type variant = "primary" | "secondary" | "base";
 
 const variants: Record<variant, string> = {
-    primary: "text-clr-brand-red-dark",
-    secondary: "text-clr-brand-rose",
-    base: "text-clr-text",
+    primary: "text-clr-text-strong",
+    secondary: "",
+    base: "text-clr-text-strong",
 };
 
 const mutedVariants: Record<variant, string> = {
-    primary: "text-clr-brand-red-light",
-    secondary: "text-clr-brand-rose-light",
+    primary: "",
+    secondary: "",
     base: "text-clr-text-muted",
 };
 
 export const headingStyles = {
     h1: cn(
-        "text-3xl font-bold",
-        "xs:text-3xl",
-        "sm:text-4xl",
-        "md:text-5xl",
+        "font-bold leading-tight tracking-tight",
+        "text-4xl",
+        "xs:text-5xl",
+        "sm:text-5xl",
+        "md:text-6xl",
         "lg:text-6xl"
     ),
-    h2: cn(
-        "text-2xl font-bold",
-        "xs:text-2xl",
-        "sm:text-3xl",
-        "md:text-4xl",
-        "lg:text-4xl"
-    ),
-    h3: cn(
-        "text-lg font-bold",
-        "xs:text-xl",
-        "sm:text-xl",
-        "md:text-2xl",
-        "lg:text-2xl"
-    ),
+    h2: cn("font-bold leading-snug tracking-tight", "text-2xl", "xs:text-3xl"),
+    h3: cn("text-xl ", "font-medium leading-snug", "xs:text-2xl"),
     h4: cn(
         "text-lg font-semibold",
         "xs:text-xl",
@@ -63,9 +53,9 @@ export const headingStyles = {
 interface HeadingProps {
     styling?: Heading;
     semantic?: Heading;
-    children?: string;
+    children?: ReactNode;
     variant?: variant;
-    text?: string;
+    text?: ReactNode;
     muted?: boolean;
     className?: string;
 }
@@ -77,14 +67,14 @@ export default function Heading({
     className,
     muted = false,
     text,
-    variant = "primary",
+    variant = "base",
 }: HeadingProps) {
     const Tag = semantic ? semantic : "p";
     const styleTarget = styling ? styling : semantic;
     return (
         <Tag
             className={cn(
-                "text-clr-text-strong leading-tight",
+                "text-clr-text-strong font-heading leading-tight",
                 styleTarget && headingStyles[styleTarget],
                 variants[variant],
                 muted && mutedVariants[variant],

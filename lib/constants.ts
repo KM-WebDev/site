@@ -1,4 +1,4 @@
-import { ScreenBreakpoint } from "../types/global";
+import { ScreenBreakpoint } from "./types/global";
 
 export const BREAKPOINT_VALUES: Record<ScreenBreakpoint, number> = {
     base: 0,

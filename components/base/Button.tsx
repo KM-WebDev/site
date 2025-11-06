@@ -1,12 +1,15 @@
 import { ReactNode } from "react";
-import { cn } from "@/lib/utils/cn";
+import { cn } from "@/lib/utils";
 import Link from "next/link";
 
+type variant = "primary" | "opposite" | "secondary" | "transparent";
+
 const variants = {
-    primary:
-        "bg-clr-brand-red text-zinc-100 hover:bg-clr-brand-red-dark shadow",
-    opposite: "bg-white hover:bg-clr-brand-rose",
-    secondary: "",
+    primary: "bg-clr-text text-clr-bg-dark border border-clr-border",
+    secondary: "bg-clr-bg-light text-clr-text-strong border border-clr-border",
+    opposite: "",
+    transparent:
+        "text-clr-text-strong border border-clr-border bg-clr-bg-light/40 ",
 };
 
 export interface ButtonProps {
@@ -15,7 +18,7 @@ export interface ButtonProps {
     text?: string;
     href?: string;
     as?: "button" | "link";
-    variant?: "primary" | "opposite" | "secondary";
+    variant?: variant;
 }
 
 export default function Button({
@@ -27,10 +30,17 @@ export default function Button({
     as,
     ...props
 }: ButtonProps) {
+    const base =
+        "group/button relative flex cursor-pointer items-center justify-center";
     const className =
-        "group/button relative flex cursor-pointer items-center justify-center gap-4 rounded-full px-16 py-4 text-base font-medium transition-all duration-200 ";
+        " gap-4 rounded-xl px-6 py-2 text-base font-medium transition-all duration-200";
 
-    const combinedClasses = cn(variants[variant], className, passedClassName);
+    const combinedClasses = cn(
+        variants[variant],
+        base,
+        className,
+        passedClassName
+    );
 
     if (as === "link" && href) {
         return (

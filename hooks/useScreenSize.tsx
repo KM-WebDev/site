@@ -1,4 +1,4 @@
-import { BREAKPOINT_VALUES } from "@/lib/constants/global";
+import { BREAKPOINT_VALUES } from "@/lib/constants";
 import { ScreenBreakpoint } from "@/lib/types/global";
 import { useEffect, useState } from "react";
 

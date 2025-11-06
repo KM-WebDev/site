@@ -1,5 +1,5 @@
 import { BasicComponentProps } from "@/lib/types/global";
-import { cn } from "@/lib/utils/cn";
+import { cn } from "@/lib/utils";
 import { ReactNode } from "react";
 
 type size = "normal" | "small" | "large" | "xlarge";
@@ -9,14 +9,14 @@ type semantic = "span" | "p" | null;
 type Heading = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 
 const variants: Record<variant, string> = {
-    primary: "text-clr-brand-red-dark",
-    secondary: "text-clr-brand-rose",
+    primary: "",
+    secondary: "",
     base: "text-clr-text",
 };
 
 const mutedVariants: Record<variant, string> = {
-    primary: "text-clr-brand-red-light",
-    secondary: "text-clr-brand-rose-light",
+    primary: "",
+    secondary: "",
     base: "text-clr-text-muted",
 };
 
@@ -49,7 +49,7 @@ export default function Text({
     text,
     semantic = "p",
     size = "normal",
-    variant = "primary",
+    variant = "base",
     styling = "normal",
     muted = false,
 }: TextProps) {

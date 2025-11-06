@@ -3,7 +3,7 @@
 import { ReactNode, useContext } from "react";
 import { BreakpointContext } from "../context/BreakpointProvider";
 import { ScreenBreakpoint } from "@/lib/types/global";
-import { BREAKPOINT_VALUES } from "@/lib/constants/global";
+import { BREAKPOINT_VALUES } from "@/lib/constants";
 
 export interface BreakpointProps {
     children: ReactNode;

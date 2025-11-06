@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils/cn";
+import { cn } from "@/lib/utils";
 type paddingDirection = "top" | "bottom";
 type SpaceSizes = "xs" | "sm" | "md" | "lg" | "xl";
 
@@ -17,19 +17,19 @@ interface ContentProps {
 }
 
 const sectionPaddingTop = {
-    xs: "pt-xs",
-    sm: "pt-sm",
-    md: "pt-md",
-    lg: "pt-lg",
-    xl: "pt-xl",
+    xs: "pt-size-xs",
+    sm: "pt-size-sm",
+    md: "pt-size-md",
+    lg: "pt-size-lg",
+    xl: "pt-size-xl",
 };
 
 const sectionPaddingBottom = {
-    xs: "pb-xs",
-    sm: "pb-sm",
-    md: "pb-md",
-    lg: "pb-lg",
-    xl: "pb-xl",
+    xs: "pb-size-xs",
+    sm: "pb-size-sm",
+    md: "pb-size-md",
+    lg: "pb-size-lg",
+    xl: "pb-size-xl",
 };
 
 export default function Section({
@@ -57,11 +57,11 @@ export default function Section({
 }
 
 const contentGap = {
-    xs: "gap-xs",
-    sm: "gap-sm",
-    md: "gap-md",
-    lg: "gap-lg",
-    xl: "gap-xl",
+    xs: "gap-size-xs",
+    sm: "gap-size-sm",
+    md: "gap-size-md",
+    lg: "gap-size-lg",
+    xl: "gap-size-xl",
 };
 
 function Content({
@@ -71,7 +71,7 @@ function Content({
     gapSize = "md",
 }: ContentProps) {
     return (
-        <div className="flex w-full flex-col items-center">
+        <div className="flex h-full w-full flex-col items-center">
             <div
                 className={cn(
                     "max-xs:px-4",

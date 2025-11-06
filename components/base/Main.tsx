@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils/cn";
+import { cn } from "@/lib/utils";
 import { HTMLAttributes } from "react";
 
 export default function Main({
@@ -7,7 +7,7 @@ export default function Main({
     ...props
 }: HTMLAttributes<HTMLElement>) {
     return (
-        <main className={cn("bg-zinc-50", className)} {...props}>
+        <main className={cn("", className)} {...props}>
             {children}
         </main>
     );

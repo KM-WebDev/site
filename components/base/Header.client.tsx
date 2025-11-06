@@ -3,7 +3,7 @@
 import { ReactNode, useCallback, useContext, useEffect, useRef } from "react";
 import { NavigationContext } from "../../context/NavigationProvider";
 import { BasicComponentProps } from "@/lib/types/global";
-import { cn } from "@/lib/utils/cn";
+import { cn } from "@/lib/utils";
 import { createPortal } from "react-dom";
 
 interface HeaderContainerProps {
@@ -30,6 +30,7 @@ export function HeaderHeightPadding({ className }: HeaderHeightProps) {
         if (headerRef.current && paddingRef.current) {
             const { height } = headerRef.current.getBoundingClientRect();
             paddingRef.current.style.height = height.toString() + "px";
+            console.log(height);
         }
     }, [headerRef, paddingRef]);
 

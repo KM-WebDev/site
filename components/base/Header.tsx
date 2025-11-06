@@ -17,12 +17,12 @@ export default function Header({ Logo }: HeaderProps) {
     return (
         <HeaderContainer
             className={cn(
-                "border-clr-border/50 fixed top-0 right-0 left-0 z-10000 flex justify-center border-b"
+                "border-clr-border/50 bg-clr-bg-light/50 fixed top-0 right-0 left-0 z-10000 flex justify-center border-b backdrop-blur-md"
             )}
         >
             <div
                 className={cn(
-                    "bg-clr-bg-light/50 flex w-full max-w-[1200px] items-center justify-between px-5 py-4 backdrop-blur-md lg:py-2"
+                    "flex w-full max-w-[1200px] items-center justify-between px-5 py-4 lg:py-2"
                 )}
             >
                 <HeaderLogo Logo={Logo} />

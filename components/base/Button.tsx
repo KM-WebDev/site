@@ -7,7 +7,7 @@ type variant = "primary" | "opposite" | "secondary" | "transparent";
 const variants = {
     primary: "bg-clr-text text-clr-bg-dark border border-clr-border",
     secondary: "bg-clr-bg-light text-clr-text-strong border border-clr-border",
-    opposite: "",
+    opposite: "text-clr-text-strong border border-clr-border bg-clr-bg-light",
     transparent:
         "text-clr-text-strong border border-clr-border bg-clr-bg-light/40 ",
 };

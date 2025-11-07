@@ -64,9 +64,7 @@ function renderLink(route: NavigationRoutesEntry) {
         <NavLink
             closeNavOnClick={true}
             route={route}
-            className="text-clr-text-muted hover:text-clr-text cursor-pointer font-medium tracking-wider"
-            activeClassName=""
-            ctaClassName="px-4 py-1.5 max-lg:mt-5 bg-clr-brand-red w-full flex text-white justify-center rounded-full"
+            className="text-clr-text-muted hover:text-clr-text cursor-pointer px-1 py-0.5 font-medium tracking-wider"
         />
     );
 }

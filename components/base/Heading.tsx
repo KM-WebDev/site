@@ -20,7 +20,7 @@ export const headingStyles = {
     h1: cn(
         "font-bold leading-tight tracking-tight",
         "text-4xl",
-        "xs:text-5xl",
+        "xs:text-4xl",
         "sm:text-5xl",
         "md:text-6xl",
         "lg:text-6xl"

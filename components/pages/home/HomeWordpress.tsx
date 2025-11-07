@@ -9,6 +9,7 @@ import { IoPricetagOutline, IoRocketOutline } from "react-icons/io5";
 import { AiOutlineRise } from "react-icons/ai";
 import { DotBackground } from "@/third-party/aceternity-ui/DotBackground";
 import { TextShimmer } from "@/third-party/motion-primitives/TextShimmer";
+import { GlowEffect } from "@/third-party/motion-primitives/GlowEffect";
 type Point = {
     title: string;
     text: string;
@@ -114,7 +115,7 @@ function Table() {
                 return (
                     <div
                         key={pros.title}
-                        className="gap-size-xs bg-clr-bg-dark py-size-sm xl:px-size-sm px-size-xs shadow-clr-bg-extra-dark flex flex-col rounded-2xl shadow-lg md:gap-0"
+                        className="gap-size-xs bg-clr-bg-dark py-size-sm xl:px-size-sm px-size-xs shadow-clr-bg-extra-dark relative flex flex-col rounded-2xl shadow-lg md:gap-0"
                     >
                         <Heading
                             semantic="h4"
@@ -172,7 +173,7 @@ function Point({ children, className }: BasicComponentProps) {
     return (
         <div
             className={cn(
-                "p-size-sm gap-size-xs flex h-full flex-col rounded-2xl border-4 shadow-lg max-md:w-[90%]",
+                "p-size-sm gap-size-xs relative flex h-full flex-col rounded-2xl border-4 shadow-lg max-md:w-[90%]",
                 className
             )}
         >

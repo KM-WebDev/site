@@ -137,11 +137,14 @@ export default function HomeTech() {
                         }}
                         viewOptions={{ margin: "0px 0px -50px 0px" }}
                     >
-                        <Heading styling="h3" className="text-center">
+                        <Heading
+                            styling="h3"
+                            className="text-center max-sm:flex max-sm:flex-wrap max-sm:justify-center"
+                        >
                             <span>wykorzystujemy technologie</span>{" "}
                             <TextShimmer
                                 as="span"
-                                className="[--base-color:var(--color-sky-500)] [--base-gradient-color:var(--color-sky-300)]"
+                                className="text-center [--base-color:var(--color-sky-500)] [--base-gradient-color:var(--color-sky-300)]"
                             >
                                 Next.js
                             </TextShimmer>

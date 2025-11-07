@@ -4,6 +4,7 @@ import Heading from "@/components/base/Heading";
 import Section from "@/components/base/Section";
 import Text from "@/components/base/Text";
 import { GridBackground } from "@/third-party/aceternity-ui/GridBackground";
+import { InView } from "@/third-party/motion-primitives/InView";
 import Image from "next/image";
 
 export default function HomeHero() {
@@ -12,35 +13,128 @@ export default function HomeHero() {
             <HeaderHeightPadding />
             <GridBackground />
             <Section.Content className="gap-size-md relative flex">
-                <Heading
-                    semantic="h1"
-                    className="mx-auto max-w-3xl text-center lg:text-6xl"
+                <InView
+                    once={true}
+                    variants={{
+                        hidden: {
+                            opacity: 0,
+                            y: 30,
+                            scale: 0.95,
+                            filter: "blur(4px)",
+                        },
+                        visible: {
+                            opacity: 1,
+                            y: 0,
+                            scale: 1,
+                            filter: "blur(0px)",
+                        },
+                    }}
+                    transition={{ duration: 0.3, ease: "easeInOut", delay: 0 }}
+                    viewOptions={{ margin: "0px 0px 0px 0px" }}
                 >
-                    Stwórz z nami nowoczesną stronę internetową
-                </Heading>
+                    <Heading
+                        semantic="h1"
+                        className="mx-auto max-w-3xl text-center lg:text-6xl"
+                    >
+                        Stwórz z nami nowoczesną stronę internetową
+                    </Heading>
+                </InView>
 
-                <Text className="mx-auto max-w-3xl text-center" muted>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Repudiandae vitae velit nobis aperiam a exercitationem ea
-                    illum est ipsum corporis? Lorem ipsum dolor, sit amet
-                    consectetur adipisicing elit. Sapiente, dolor.
-                </Text>
+                <InView
+                    once={true}
+                    variants={{
+                        hidden: {
+                            opacity: 0,
+                            y: 30,
+                            scale: 0.95,
+                            filter: "blur(4px)",
+                        },
+                        visible: {
+                            opacity: 1,
+                            y: 0,
+                            scale: 1,
+                            filter: "blur(0px)",
+                        },
+                    }}
+                    transition={{
+                        duration: 0.3,
+                        ease: "easeInOut",
+                        delay: 0.2,
+                    }}
+                    viewOptions={{ margin: "0px 0px 0px 0px" }}
+                >
+                    <Text className="mx-auto max-w-3xl text-center" muted>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Repudiandae vitae velit nobis aperiam a
+                        exercitationem ea illum est ipsum corporis? Lorem ipsum
+                        dolor, sit amet consectetur adipisicing elit. Sapiente,
+                        dolor.
+                    </Text>
+                </InView>
 
-                <div className="flex justify-center gap-4 text-sm tracking-wider">
-                    <Button text="zamów audyt" variant="opposite" />
-                    <Button text="zakup stronę" />
-                </div>
-
-                <div className="p-size-xs rounded-[24px] bg-sky-800/30">
-                    <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl">
-                        <Image
-                            src={"/test-hero.png"}
-                            fill
-                            alt="hero"
-                            className="object-contain"
-                        />
+                <InView
+                    once={true}
+                    variants={{
+                        hidden: {
+                            opacity: 0,
+                            y: 30,
+                            scale: 0.95,
+                            filter: "blur(4px)",
+                        },
+                        visible: {
+                            opacity: 1,
+                            y: 0,
+                            scale: 1,
+                            filter: "blur(0px)",
+                        },
+                    }}
+                    transition={{
+                        duration: 0.3,
+                        ease: "easeInOut",
+                        delay: 0.4,
+                    }}
+                    viewOptions={{ margin: "0px 0px 0px 0px" }}
+                >
+                    <div className="flex justify-center gap-4 text-sm tracking-wider">
+                        <Button text="zamów audyt" variant="opposite" />
+                        <Button text="zakup stronę" />
                     </div>
-                </div>
+                </InView>
+
+                <InView
+                    once={true}
+                    variants={{
+                        hidden: {
+                            opacity: 0,
+                            y: 30,
+                            scale: 0.95,
+                            filter: "blur(4px)",
+                        },
+                        visible: {
+                            opacity: 1,
+                            y: 0,
+                            scale: 1,
+                            filter: "blur(0px)",
+                        },
+                    }}
+                    transition={{
+                        duration: 0.3,
+                        ease: "easeInOut",
+                        delay: 0.6,
+                    }}
+                    viewOptions={{ margin: "0px 0px 0px 0px" }}
+                >
+                    <div className="p-size-xs rounded-[24px] bg-sky-800/30">
+                        <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl">
+                            <Image
+                                src={"/test-hero.png"}
+                                fill
+                                alt="hero"
+                                className="object-contain"
+                            />
+                        </div>
+                    </div>
+                </InView>
             </Section.Content>
         </Section>
     );

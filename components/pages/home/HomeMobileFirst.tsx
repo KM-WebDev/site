@@ -11,7 +11,7 @@ export default function HomeMobileFirst() {
                     <Heading semantic="h2">
                         Projektuje responsywne strony internetowe
                     </Heading>
-                    <Text className="">
+                    <Text muted>
                         Lorem ipsum dolor sit, amet consectetur adipisicing
                         elit. Quae hic alias illo eos dolor provident sequi
                         reiciendis quasi animi sunt delectus cum corporis
@@ -21,25 +21,38 @@ export default function HomeMobileFirst() {
                     </Text>
                 </div>
 
-                <div className="gap-size-md flex h-full w-full">
-                    <div className="gap-size-sm flex flex-col justify-center text-end">
-                        <Heading styling="h1">2</Heading>
+                <div className="gap-size-md flex h-full w-full flex-col max-xl:items-center xl:flex-row">
+                    <div className="gap-size-xs flex flex-col justify-center xl:text-end">
+                        <Heading styling="h1" className="max-xl:hidden">
+                            2
+                        </Heading>
+                        <Heading styling="h1" className="xl:hidden">
+                            1
+                        </Heading>
                         <Heading semantic="h3">Ogromny rynek mobilny</Heading>
-                        <Text className="">
+                        <Text muted>
                             Lorem ipsum dolor sit, amet consectetur adipisicing
                             elit. Quae hic alias illo eos dolor provident sequi
                             reiciendis quasi animi sunt delectus cum corporis
                             officia non quis sapiente enim, facere expedita?
                         </Text>
                     </div>
-                    <Iphone src="/strona.jpeg" className="max-w-md" />
-                    <div className="flex flex-col justify-between">
-                        <div className="gap-size-sm flex flex-col">
-                            <Heading styling="h1">1</Heading>
+                    <Iphone
+                        src="/strona.jpeg"
+                        className="max-w-md max-xl:-order-1"
+                    />
+                    <div className="gap-size-md flex flex-col justify-between">
+                        <div className="gap-size-xs flex flex-col">
+                            <Heading styling="h1" className="max-xl:hidden">
+                                1
+                            </Heading>
+                            <Heading styling="h1" className="xl:hidden">
+                                2
+                            </Heading>
                             <Heading semantic="h3">
                                 Ogromny rynek mobilny
                             </Heading>
-                            <Text className="">
+                            <Text muted>
                                 Lorem ipsum dolor sit, amet consectetur
                                 adipisicing elit. Quae hic alias illo eos dolor
                                 provident sequi reiciendis quasi animi sunt
@@ -47,12 +60,12 @@ export default function HomeMobileFirst() {
                                 enim, facere expedita?
                             </Text>
                         </div>
-                        <div className="gap-size-sm flex flex-col">
+                        <div className="gap-size-xs flex flex-col">
                             <Heading styling="h1">3</Heading>
                             <Heading semantic="h3">
                                 Ogromny rynek mobilny
                             </Heading>
-                            <Text className="">
+                            <Text muted>
                                 Lorem ipsum dolor sit, amet consectetur
                                 adipisicing elit. Quae hic alias illo eos dolor
                                 provident sequi reiciendis quasi animi sunt

@@ -4,11 +4,10 @@ import Text from "@/components/base/Text";
 import { BasicComponentProps } from "@/lib/types/global";
 import { cn } from "@/lib/utils";
 import { BsPlugin } from "react-icons/bs";
-import { GoShieldLock } from "react-icons/go";
 import { MdSpeed } from "react-icons/md";
 import { IoPricetagOutline, IoRocketOutline } from "react-icons/io5";
 import { AiOutlineRise } from "react-icons/ai";
-import { Iphone } from "@/third-party/magic-ui/Iphone";
+import { DotBackground } from "@/third-party/aceternity-ui/DotBackground";
 type Point = {
     title: string;
     text: string;
@@ -69,15 +68,16 @@ const categoryList = [
 
 export default function HomeWordpress() {
     return (
-        <Section className="py-size-xl">
-            <Section.Content className="gap-size-2xl">
+        <Section className="py-size-xl relative">
+            <DotBackground />
+            <Section.Content className="xl:gap-size-2xl gap-size-xl z-100">
                 <div className="gap-size-sm mx-auto flex max-w-3xl flex-col text-center">
                     <Heading semantic="h2">
                         <span className="text-sky-700">Next.js</span> vs
                         Wordpress i inne buildery stron
                     </Heading>
 
-                    <Text>
+                    <Text muted>
                         Lorem ipsum, dolor sit amet consectetur adipisicing
                         elit. Explicabo obcaecati mollitia ipsa libero minus
                         repellat pariatur facilis assumenda eaque rem dolores,
@@ -87,10 +87,10 @@ export default function HomeWordpress() {
                 </div>
 
                 <div className="flex flex-col">
-                    <div className="flex w-full justify-between">
+                    {/* <div className="flex w-full justify-between">
                         <Heading semantic="h3">Next.js</Heading>
                         <Heading semantic="h3">Wordpress</Heading>
-                    </div>
+                    </div> */}
                     <Table />
                 </div>
             </Section.Content>
@@ -100,23 +100,26 @@ export default function HomeWordpress() {
 
 function Table() {
     return (
-        <div className="gap-size-lg flex flex-col">
+        <div className="md:gap-size-lg gap-size-md flex flex-col">
             {prosList.map((pros, i) => {
                 const cons = consList[i];
                 const Icon = categoryList[i].icon;
 
                 return (
-                    <div key={pros.title} className="gap-size-xs flex flex-col">
+                    <div
+                        key={pros.title}
+                        className="gap-size-xs bg-clr-bg-dark py-size-sm xl:px-size-sm px-size-xs shadow-clr-bg-extra-dark flex flex-col rounded-2xl shadow-lg md:gap-0"
+                    >
                         <Heading
                             semantic="h4"
                             text={categoryList[i].name}
                             className="text-center"
                             muted
                         />
-                        <div className="gap-size-lg grid grid-cols-[1fr_auto_1fr] rounded-2xl">
+                        <div className="md:gap-size-sm lg:gap-size-lg gap-size-lg grid rounded-2xl md:auto-rows-fr md:grid-cols-[1fr_auto_1fr] md:items-stretch">
                             <Pros point={pros} />
-                            <div className="flex flex-col items-center justify-center">
-                                <Icon className="text-clr-text-extra-muted text-6xl" />
+                            <div className="flex h-full flex-col items-center justify-center max-md:-order-1">
+                                <Icon className="text-clr-text-extra-muted text-4xl md:text-5xl lg:text-6xl" />
                             </div>
                             <Cons point={cons} />
                         </div>
@@ -129,19 +132,33 @@ function Table() {
 
 function Pros({ point }: { point: Point }) {
     return (
-        <Point className="border-green-500/20 bg-green-200/30 shadow-green-500/20">
-            <Heading semantic="h4" styling="h3" text={point.title} />
-            <Text text={point.text} className="leading-normal" muted />
-        </Point>
+        <div className="relative flex flex-col">
+            <Heading styling="h4" muted className="absolute bottom-full">
+                Next.js
+            </Heading>
+            <Point className="border-green-500/20 bg-green-200/30 shadow-green-500/20">
+                <Heading semantic="h4" styling="h3" text={point.title} />
+                <Text text={point.text} className="leading-normal" muted />
+            </Point>
+        </div>
     );
 }
 
 function Cons({ point }: { point: Point }) {
     return (
-        <Point className="border-red-500/20 bg-red-200/30 shadow-red-500/20">
-            <Heading semantic="h4" styling="h3" text={point.title} />
-            <Text text={point.text} className="leading-normal" muted />
-        </Point>
+        <div className="relative flex flex-col">
+            <Heading
+                styling="h4"
+                className="absolute right-0 bottom-full"
+                muted
+            >
+                Wordpress
+            </Heading>
+            <Point className="border-red-500/20 bg-red-200/30 shadow-red-500/20 max-md:ml-auto">
+                <Heading semantic="h4" styling="h3" text={point.title} />
+                <Text text={point.text} className="leading-normal" muted />
+            </Point>
+        </div>
     );
 }
 
@@ -149,7 +166,7 @@ function Point({ children, className }: BasicComponentProps) {
     return (
         <div
             className={cn(
-                "p-size-sm gap-size-xs flex flex-col rounded-2xl border-4 shadow-lg",
+                "p-size-sm gap-size-xs flex h-full flex-col rounded-2xl border-4 shadow-lg max-md:w-[90%]",
                 className
             )}
         >

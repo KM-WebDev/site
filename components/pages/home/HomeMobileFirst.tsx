@@ -2,6 +2,7 @@ import Heading from "@/components/base/Heading";
 import Section from "@/components/base/Section";
 import Text from "@/components/base/Text";
 import { Iphone } from "@/third-party/magic-ui/Iphone";
+import { Tilt } from "@/third-party/motion-primitives/Tilt";
 
 export default function HomeMobileFirst() {
     return (
@@ -37,10 +38,21 @@ export default function HomeMobileFirst() {
                             officia non quis sapiente enim, facere expedita?
                         </Text>
                     </div>
-                    <Iphone
-                        src="/strona.jpeg"
-                        className="max-w-md max-xl:-order-1"
-                    />
+                    <Tilt
+                        rotationFactor={6}
+                        isRevese
+                        style={{
+                            transformOrigin: "center center",
+                        }}
+                        springOptions={{
+                            stiffness: 26.7,
+                            damping: 4.1,
+                            mass: 0.2,
+                        }}
+                        className="group relative h-full w-full max-w-md rounded-lg max-xl:-order-1"
+                    >
+                        <Iphone src="/strona.jpeg" className="" />
+                    </Tilt>
                     <div className="gap-size-md flex flex-col justify-between">
                         <div className="gap-size-xs flex flex-col">
                             <Heading styling="h1" className="max-xl:hidden">

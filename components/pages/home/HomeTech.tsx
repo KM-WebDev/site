@@ -47,7 +47,7 @@ export default function HomeTech() {
     return (
         <Section className="py-size-4xl">
             <Section.Content className="gap-size-xl">
-                <div className="gap-size-sm flex max-w-2xl flex-col self-start">
+                <div className="gap-size-sm mx-auto flex max-w-3xl flex-col text-center">
                     <Heading semantic="h2">
                         Co wyróżnia nasze strony internetowe od konkurencji?
                     </Heading>

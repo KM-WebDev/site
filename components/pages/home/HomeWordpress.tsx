@@ -8,6 +8,7 @@ import { GoShieldLock } from "react-icons/go";
 import { MdSpeed } from "react-icons/md";
 import { IoPricetagOutline, IoRocketOutline } from "react-icons/io5";
 import { AiOutlineRise } from "react-icons/ai";
+import { Iphone } from "@/third-party/magic-ui/Iphone";
 type Point = {
     title: string;
     text: string;
@@ -70,7 +71,7 @@ export default function HomeWordpress() {
     return (
         <Section className="py-size-xl">
             <Section.Content className="gap-size-2xl">
-                <div className="gap-size-sm flex max-w-3xl flex-col">
+                <div className="gap-size-sm mx-auto flex max-w-3xl flex-col text-center">
                     <Heading semantic="h2">
                         <span className="text-sky-700">Next.js</span> vs
                         Wordpress i inne buildery stron
@@ -99,7 +100,7 @@ export default function HomeWordpress() {
 
 function Table() {
     return (
-        <div className="gap-size-md flex flex-col">
+        <div className="gap-size-lg flex flex-col">
             {prosList.map((pros, i) => {
                 const cons = consList[i];
                 const Icon = categoryList[i].icon;
@@ -112,7 +113,7 @@ function Table() {
                             className="text-center"
                             muted
                         />
-                        <div className="gap-size-lg bg-clr-bg-dark grid grid-cols-[1fr_auto_1fr] rounded-2xl">
+                        <div className="gap-size-lg grid grid-cols-[1fr_auto_1fr] rounded-2xl">
                             <Pros point={pros} />
                             <div className="flex flex-col items-center justify-center">
                                 <Icon className="text-clr-text-extra-muted text-6xl" />
@@ -128,7 +129,7 @@ function Table() {
 
 function Pros({ point }: { point: Point }) {
     return (
-        <Point className="border-green-500/20 bg-green-200/30">
+        <Point className="border-green-500/20 bg-green-200/30 shadow-green-500/20">
             <Heading semantic="h4" styling="h3" text={point.title} />
             <Text text={point.text} className="leading-normal" muted />
         </Point>
@@ -137,7 +138,7 @@ function Pros({ point }: { point: Point }) {
 
 function Cons({ point }: { point: Point }) {
     return (
-        <Point className="border-red-500/20 bg-red-200/30">
+        <Point className="border-red-500/20 bg-red-200/30 shadow-red-500/20">
             <Heading semantic="h4" styling="h3" text={point.title} />
             <Text text={point.text} className="leading-normal" muted />
         </Point>
@@ -148,7 +149,7 @@ function Point({ children, className }: BasicComponentProps) {
     return (
         <div
             className={cn(
-                "p-size-sm gap-size-xs flex flex-col rounded-2xl border-4",
+                "p-size-sm gap-size-xs flex flex-col rounded-2xl border-4 shadow-lg",
                 className
             )}
         >

@@ -11,7 +11,7 @@ export default async function AppUtilities() {
         <>
             <ReactLenis
                 options={{
-                    duration: 1.5, // scroll duration
+                    duration: 0.7, // scroll duration
                     lerp: 0.5, // interpolation factor
                     touchMultiplier: 0.7, // speed of touch scroll
                 }}

@@ -9,7 +9,7 @@ export default function HomeMobileFirst() {
             <Section.Content className="gap-size-xl">
                 <div className="gap-size-sm mx-auto flex max-w-3xl flex-col text-center">
                     <Heading semantic="h2">
-                        Projektuje responsywne strony internetowe
+                        Projektujemy responsywne strony internetowe
                     </Heading>
                     <Text muted>
                         Lorem ipsum dolor sit, amet consectetur adipisicing

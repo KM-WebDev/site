@@ -9,6 +9,7 @@ import { GiGrowth } from "react-icons/gi";
 import { BsPlugin } from "react-icons/bs";
 import { IoShieldCheckmark } from "react-icons/io5";
 import { InView } from "@/third-party/motion-primitives/InView";
+import { TextShimmer } from "@/third-party/motion-primitives/TextShimmer";
 
 const cards = [
     {
@@ -138,7 +139,12 @@ export default function HomeTech() {
                     >
                         <Heading styling="h3" className="text-center">
                             <span>wykorzystujemy technologie</span>{" "}
-                            <span className="text-sky-700">Next.js</span>
+                            <TextShimmer
+                                as="span"
+                                className="[--base-color:var(--color-sky-500)] [--base-gradient-color:var(--color-sky-300)]"
+                            >
+                                Next.js
+                            </TextShimmer>
                         </Heading>
                     </InView>
 

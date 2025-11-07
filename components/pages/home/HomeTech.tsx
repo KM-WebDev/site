@@ -10,6 +10,7 @@ import { BsPlugin } from "react-icons/bs";
 import { IoShieldCheckmark } from "react-icons/io5";
 import { InView } from "@/third-party/motion-primitives/InView";
 import { TextShimmer } from "@/third-party/motion-primitives/TextShimmer";
+import { Highlighter } from "@/third-party/magic-ui/Highlither";
 
 const cards = [
     {
@@ -74,7 +75,14 @@ export default function HomeTech() {
                         once={true}
                     >
                         <Heading semantic="h2">
-                            Co wyróżnia nasze strony internetowe od konkurencji?
+                            Co wyróżnia{" "}
+                            <Highlighter
+                                color="var(--color-sky-300)"
+                                isView={true}
+                            >
+                                nasze strony
+                            </Highlighter>{" "}
+                            internetowe od konkurencji?
                         </Heading>
                     </InView>
                     <InView

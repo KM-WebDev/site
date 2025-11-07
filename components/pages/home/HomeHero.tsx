@@ -4,6 +4,7 @@ import Heading from "@/components/base/Heading";
 import Section from "@/components/base/Section";
 import Text from "@/components/base/Text";
 import { GridBackground } from "@/third-party/aceternity-ui/GridBackground";
+import { Safari } from "@/third-party/magic-ui/Safari";
 import { InView } from "@/third-party/motion-primitives/InView";
 import Image from "next/image";
 
@@ -124,7 +125,7 @@ export default function HomeHero() {
                     }}
                     viewOptions={{ margin: "0px 0px 0px 0px" }}
                 >
-                    <div className="p-size-xs rounded-[24px] bg-sky-800/30">
+                    {/* <div className="p-size-xs rounded-[24px] bg-sky-800/30">
                         <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl">
                             <Image
                                 src={"/test-hero.png"}
@@ -133,7 +134,8 @@ export default function HomeHero() {
                                 className="object-contain"
                             />
                         </div>
-                    </div>
+                    </div> */}
+                    <Safari imageSrc="/template-hero.webp" />
                 </InView>
             </Section.Content>
         </Section>

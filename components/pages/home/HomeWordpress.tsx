@@ -8,6 +8,7 @@ import { MdSpeed } from "react-icons/md";
 import { IoPricetagOutline, IoRocketOutline } from "react-icons/io5";
 import { AiOutlineRise } from "react-icons/ai";
 import { DotBackground } from "@/third-party/aceternity-ui/DotBackground";
+import { TextShimmer } from "@/third-party/motion-primitives/TextShimmer";
 type Point = {
     title: string;
     text: string;
@@ -73,8 +74,13 @@ export default function HomeWordpress() {
             <Section.Content className="xl:gap-size-2xl gap-size-xl z-100">
                 <div className="gap-size-sm mx-auto flex max-w-3xl flex-col text-center">
                     <Heading semantic="h2">
-                        <span className="text-sky-700">Next.js</span> vs
-                        Wordpress i inne buildery stron
+                        <TextShimmer
+                            as="span"
+                            className="[--base-color:var(--color-sky-500)] [--base-gradient-color:var(--color-sky-300)]"
+                        >
+                            Next.js
+                        </TextShimmer>{" "}
+                        vs Wordpress i inne buildery stron
                     </Heading>
 
                     <Text muted>

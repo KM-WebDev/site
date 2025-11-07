@@ -24,7 +24,7 @@ function Content({ children, className }: ContentProps) {
             <div
                 className={cn(
                     "max-xs:px-4",
-                    "container flex flex-col px-4 xl:max-w-[1200px]",
+                    "flex flex-col px-4 xl:max-w-[1200px]",
                     "lg:px-5",
                     "xl:px-0",
                     className

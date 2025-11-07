@@ -4,6 +4,7 @@ import AppProviders from "@/controls/AppProviders";
 import Header from "@/components/base/Header";
 import AppUtilities from "@/controls/AppUtilities";
 import Main from "../components/base/Main";
+import Text from "../components/base/Text";
 
 export const metadata: Metadata = {
     title: "Create Next App",
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
 
 import { Inter } from "next/font/google";
 import { Outfit } from "next/font/google";
+import Footer from "@/components/base/Footer";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit" });
@@ -21,12 +23,23 @@ export default function RootLayout({
 }: Readonly<{
     children: React.ReactNode;
 }>) {
+    const Logo = (
+        <Text semantic="span" size="large" className="font-heading">
+            KM-WebDev
+        </Text>
+    );
+
     return (
-        <html lang="en" className={`${inter.variable} ${outfit.variable}`}>
+        <html
+            lang="en"
+            className={`${inter.variable} ${outfit.variable}`}
+            suppressHydrationWarning // According to https://www.npmjs.com/package/next-themes this will only suppress warnings 1 level down
+        >
             <body className="overscroll-none">
                 <AppProviders>
-                    <Header Logo={<span>KM-WebDev</span>} />
+                    <Header Logo={Logo} />
                     <Main>{children}</Main>
+                    <Footer Logo={Logo} />
                 </AppProviders>
                 <AppUtilities />
             </body>

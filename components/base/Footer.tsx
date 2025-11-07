@@ -1,150 +1,176 @@
-// import {
-//     routes as mainRoutes,
-//     legalRoutes,
-//     NavigationRoutes,
-// } from "@/app/routes";
+import { routes, legalRoutes, NavigationRoutes } from "@/app/routes";
+import { BasicComponentProps } from "@/lib/types/global";
+import { cn } from "@/lib/utils";
 
-// import SectionHeading from "./SectionHeading";
-// import { BasicComponentProps } from "@/lib/types/global";
-// import Section from "./Section";
-// import Heading from "./Heading";
-// import { cn } from "@/lib/utils";
-// import Link from "next/link";
-// import Button from "./Button";
+import ThemeSwitcher from "../ThemeSwitcher";
+import Section from "./Section";
+import Button from "./Button";
+import Heading from "./Heading";
+import Text from "./Text";
 
-// interface SocialFooterProps extends BasicComponentProps {
-//     socials: string[];
-// }
+import { ReactNode } from "react";
+import Link from "next/link";
+import Image from "next/image";
 
-// interface ColumnProps extends BasicComponentProps {
-//     title: string;
-// }
+interface FooterProps {
+    Logo: ReactNode;
+}
 
-// export default function Footer({ socials }: SocialFooterProps) {
-//     return (
-//         <footer>
-//             <FooterCTA />
-//             <FooterBottom socials={socials} />
-//         </footer>
-//     );
-// }
+interface ColumnProps extends BasicComponentProps {
+    title: string;
+}
 
-// function FooterCTA() {
-//     return (
-//         <Section className="z-10000 bg-white text-zinc-800">
-//             <Section.Content className="items-center gap-4">
-//                 <SectionHeading
-//                     number="06"
-//                     heading="Masz pomysł na nowy projekt?"
-//                     text="Pomogę Ci stworzyć logo, które wyróżni Twoją markę na tle konkurencji."
-//                 />
-//                 <Button href="/kontakt" as="link">
-//                     Zacznij projekt
-//                 </Button>
-//             </Section.Content>
-//         </Section>
-//     );
-// }
+interface FooterLogoProps extends BasicComponentProps {
+    Logo: ReactNode;
+}
 
-// function FooterBottom({ socials }: SocialFooterProps) {
-//     return (
-//         <div className="bg-zinc-100 text-zinc-700">
-//             <FooterNaviagtion socials={socials} />
-//             <div
-//                 className={cn(
-//                     "relative flex flex-col items-center gap-2 border-t border-zinc-300 px-6 py-4 text-sm text-zinc-500",
-//                     "lg:flex-row lg:justify-center"
-//                 )}
-//             >
-//                 <p className="text-center">
-//                     &copy; {new Date().getFullYear()} Anastazja Mokwa. Wszelkie
-//                     prawa zastrzeżone.
-//                 </p>
+interface SocialProps {
+    link: string;
+}
 
-//                 <p
-//                     className={cn(
-//                         "text-center",
-//                         "md:text-right",
-//                         "lg:absolute lg:right-6"
-//                     )}
-//                 >
-//                     Strona wykonana przez{" "}
-//                     <span className="text-clr-brand-red font-medium transition-colors">
-//                         KM-WebDev
-//                     </span>
-//                 </p>
-//             </div>
-//         </div>
-//     );
-// }
+export default function Footer({ Logo }: FooterProps) {
+    return (
+        <footer className="bg-clr-bg-extra-dark/40 border-t py-10">
+            <Section className="gap-10">
+                <FooterTopContent Logo={Logo} />
+                <FooterBottomContent />
+            </Section>
+        </footer>
+    );
+}
 
-// function FooterNaviagtion({ socials }: SocialFooterProps) {
-//     return (
-//         <div
-//             className={cn(
-//                 "mx-auto grid max-w-3xl grid-cols-1 gap-10 px-10 py-12",
-//                 "sm:grid-cols-3 sm:px-12"
-//             )}
-//         >
-//             <Column className="gap-2" title="Szybkie linki">
-//                 <FooterLinks routes={mainRoutes} />
-//             </Column>
-//             <Column className="gap-4" title="Kontakt">
-//                 <div className="flex flex-col gap-2 text-sm text-zinc-600">
-//                     <a
-//                         href="mailto:kontakt@jankowalski.pl"
-//                         className="hover:text-clr-brand-red w-fit transition-colors"
-//                     >
-//                         kontakt@jankowalski.pl
-//                     </a>
-//                     Gdańsk, Polska
-//                 </div>
-//                 <div className="flex gap-4 text-xl text-zinc-700">
-//                     <Socials socials={socials} />
-//                 </div>
-//             </Column>
-//             <Column className="gap-2" title="Informacje prawne">
-//                 <FooterLinks routes={legalRoutes} />
-//             </Column>
-//         </div>
-//     );
-// }
+function FooterTopContent({ Logo }: FooterProps) {
+    return (
+        <Section.Content
+            className={cn("flex w-full flex-col gap-16", "md:flex-row")}
+        >
+            <FooterCTA Logo={Logo} />
+            <FooterNav />
+        </Section.Content>
+    );
+}
 
-// function Column({ title, children, className }: ColumnProps) {
-//     return (
-//         <div className={cn("flex flex-col", className)}>
-//             <Heading
-//                 styling="h6"
-//                 semantic="h6"
-//                 className="text-sm text-zinc-800 uppercase"
-//             >
-//                 {title}
-//             </Heading>
+function FooterBottomContent() {
+    return (
+        <Section.Content className="flex w-full flex-col-reverse items-center justify-between gap-5 sm:flex-row">
+            <p className="text-clr-text-muted">
+                &copy; {new Date().getFullYear()} KM-WebDev. Wszelkie prawa
+                zastrzeżone.
+            </p>
 
-//             {children}
-//         </div>
-//     );
-// }
+            <div className="flex gap-10">
+                <div className="flex items-center gap-4">
+                    <FooterSocial link="https://discord.com" />
+                    <FooterSocial link="https://github.com/KM-WebDev" />
+                </div>
 
-// function FooterLinks({ routes }: { routes: NavigationRoutes }) {
-//     return (
-//         <ul className="flex flex-col gap-2 text-sm capitalize">
-//             {routes.map((route) => {
-//                 if (route.cta) {
-//                     return;
-//                 }
+                <ThemeSwitcher />
+            </div>
+        </Section.Content>
+    );
+}
 
-//                 return (
-//                     <li key={route.name}>
-//                         <Link
-//                             href={route.link}
-//                             className="hover:text-clr-brand-red cursor-pointer text-zinc-600"
-//                         >
-//                             {route.name}
-//                         </Link>
-//                     </li>
-//                 );
-//             })}
-//         </ul>
-//     );
-// }
+function FooterCTA({ Logo }: FooterLogoProps) {
+    return (
+        <div
+            className={cn(
+                "bg-clr-bg/5 border-clr-text/10 flex h-fit flex-col gap-5 rounded-xl border p-5",
+                "md:max-w-sm"
+            )}
+        >
+            <FooterLogo Logo={Logo} />
+            <div className="flex flex-col gap-3">
+                <Heading semantic="h6" text="Bezpłatny audyt twojej strony" />
+                <Text semantic="p" muted>
+                    Przeprowadzimy pełną inspekcję strony i pokażemy jak ją
+                    usprawnić
+                </Text>
+                <Button text="Zamów teraz" className="w-fit" />
+            </div>
+        </div>
+    );
+}
+
+function FooterLogo({ Logo }: FooterLogoProps) {
+    if (!Logo) return <></>;
+
+    return <Link href="/">{Logo}</Link>;
+}
+
+function FooterSocial({ link }: SocialProps) {
+    const brand = getBrandFromUrl(link);
+
+    return (
+        <a href={link} className="h-5 w-5">
+            <div
+                className="h-full w-full"
+                style={{
+                    WebkitMaskImage: `url(https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@13.21.0/icons/${brand}.svg)`,
+                    maskImage: `url(https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@13.21.0/icons/${brand}.svg)`,
+                    background: "currentcolor",
+                    backgroundSize: "cover",
+                }}
+            />
+        </a>
+    );
+}
+
+function FooterNav() {
+    return (
+        <div
+            className={cn(
+                "grid w-full grid-cols-1 gap-y-10",
+                "sm:grid-cols-2",
+                "lg:flex lg:flex-row lg:justify-between"
+            )}
+        >
+            <Column title="Szybkie Linki">
+                <FooterNavigation routes={routes} />
+            </Column>
+            <Column title="Informacje Prawne">
+                <FooterNavigation routes={legalRoutes} />
+            </Column>
+            <Column title="Informacje Prawne">
+                <FooterNavigation routes={legalRoutes} />
+            </Column>
+        </div>
+    );
+}
+
+function Column({ title, children, className }: ColumnProps) {
+    return (
+        <div className={cn("flex w-fit flex-col gap-3", className)}>
+            <Heading styling="h6" semantic="h6">
+                {title}
+            </Heading>
+
+            {children}
+        </div>
+    );
+}
+
+function FooterNavigation({ routes }: { routes: NavigationRoutes }) {
+    return (
+        <ul className="flex flex-col gap-2">
+            {routes.map((route) => (
+                <li key={route.name}>
+                    <Link
+                        href={route.link}
+                        className="transition-colors hover:text-sky-500"
+                    >
+                        {route.name}
+                    </Link>
+                </li>
+            ))}
+        </ul>
+    );
+}
+
+function getBrandFromUrl(url: string) {
+    try {
+        const { hostname } = new URL(url);
+        return hostname.replace("www.", "").split(".")[0];
+    } catch (e) {
+        return "wordpress";
+    }
+}

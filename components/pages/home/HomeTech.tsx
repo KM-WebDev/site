@@ -51,7 +51,7 @@ export default function HomeTech() {
         <Section className="py-size-4xl">
             <Section.Content className="gap-size-xl">
                 <div className="gap-size-sm mx-auto flex max-w-3xl flex-col text-center">
-                    <InView
+                    {/* <InView
                         variants={{
                             hidden: {
                                 opacity: 0,
@@ -73,18 +73,15 @@ export default function HomeTech() {
                         }}
                         viewOptions={{ margin: "0px 0px -50px 0px" }}
                         once={true}
-                    >
-                        <Heading semantic="h2">
-                            Co wyróżnia{" "}
-                            <Highlighter
-                                color="var(--color-sky-300)"
-                                isView={true}
-                            >
-                                nasze strony
-                            </Highlighter>{" "}
-                            internetowe od konkurencji?
-                        </Heading>
-                    </InView>
+                    > */}
+                    <Heading semantic="h2">
+                        Co wyróżnia{" "}
+                        <Highlighter color="var(--color-sky-300)" isView={true}>
+                            nasze strony
+                        </Highlighter>{" "}
+                        internetowe od konkurencji?
+                    </Heading>
+                    {/* </InView> */}
                     <InView
                         once={true}
                         variants={{

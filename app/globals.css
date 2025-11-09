@@ -1,31 +1,50 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+/* :root {
+    --clr-bg-light: var(--color-neutral-50);
+    --clr-bg: var(--color-neutral-50);
+    --clr-bg-dark: var(--color-neutral-100);
+    --clr-bg-extra-dark: var(--color-neutral-200);
+    --clr-border: var(--color-neutral-200);
+    --clr-text-extra-muted: var(--color-neutral-400);
+    --clr-text-muted: var(--color-neutral-500);
+    --clr-text-light: var(--color-neutral-700);
+    --clr-text: var(--color-neutral-800);
+} */
+/* 
+@layer theme {
+    .light {
+        --clr-bg-light: var(--color-neutral-50);
+        --clr-bg: var(--color-neutral-50);
+        --clr-bg-dark: var(--color-neutral-100);
+        --clr-bg-extra-dark: var(--color-neutral-200);
+        --clr-border: var(--color-neutral-200);
+        --clr-text-extra-muted: var(--color-neutral-400);
+        --clr-text-muted: var(--color-neutral-500);
+        --clr-text-light: var(--color-neutral-700);
+        --clr-text: var(--color-neutral-800);
+    }
 
-:root {
-    --background: #ffffff;
-    --foreground: #171717;
-}
+    
+} */
 
-@theme inline {
-    --breakpoint-xs: 25rem; /* 400px */
-
-    --color-background: var(--background);
-    --color-foreground: var(--foreground);
-
-    --color-clr-bg-light: var(--color-white);
+@theme {
+    --color-clr-bg-light: var(--color-neutral-50);
     --color-clr-bg: var(--color-neutral-50);
     --color-clr-bg-dark: var(--color-neutral-100);
     --color-clr-bg-extra-dark: var(--color-neutral-200);
-
     --color-clr-border: var(--color-neutral-200);
-
     --color-clr-text-extra-muted: var(--color-neutral-400);
     --color-clr-text-muted: var(--color-neutral-500);
     --color-clr-text-light: var(--color-neutral-700);
     --color-clr-text: var(--color-neutral-800);
-    --color-clr-text-strong: var(--color-neutral-900);
+}
 
+@theme inline {
     --font-sans: var(--font-inter), sans-serif;
     --font-heading: var(--font-outfit), sans-serif;
+
+    --breakpoint-xs: 25rem; /* 400px */
 
     --spacing-size-2xs: calc(var(--spacing) * 1);
     --spacing-size-xs: calc(var(--spacing) * 2);
@@ -60,16 +79,24 @@
     }
 }
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        --background: #0a0a0a;
-        --foreground: #ededed;
+@layer theme {
+    .dark {
+        --color-clr-bg-light: var(--color-neutral-950);
+        --color-clr-bg: var(--color-neutral-800);
+        --color-clr-bg-dark: var(--color-neutral-700);
+        --color-clr-bg-extra-dark: var(--color-neutral-600);
+        --color-clr-border: var(--color-neutral-200);
+        --color-clr-text-extra-muted: var(--color-neutral-400);
+        --color-clr-text-muted: var(--color-neutral-300);
+        --color-clr-text-light: var(--color-neutral-200);
+        --color-clr-text: var(--color-neutral-100);
+        --color-clr-text-strong: var(--color-neutral-50);
     }
 }
 
 body {
-    background: var(--background);
-    color: var(--foreground);
+    /* color: var(--clr-text); */
+    /* background-color: var(--clr-bg-light); */
     font-family: var(--font-inter);
     font-family: Arial, Helvetica, sans-serif;
 }

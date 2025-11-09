@@ -48,7 +48,7 @@ const cards = [
 const spotlight = "rgba(0, 166, 244, 0.25)";
 export default function HomeTech() {
     return (
-        <Section className="py-size-4xl">
+        <Section className="py-size-4xl bg-clr-bg-light">
             <Section.Content className="gap-size-xl">
                 <div className="gap-size-sm mx-auto flex max-w-3xl flex-col text-center">
                     {/* <InView
@@ -184,7 +184,7 @@ export default function HomeTech() {
                                     }}
                                 >
                                     <SpotlightCard
-                                        className="bg-clr-bg p-size-sm lg:p-size-md gap-size-xs group/card border-clr-bg-dark shadow-clr-bg-extra-dark flex flex-col border-4 shadow-md duration-300 hover:border-sky-500/30 hover:shadow-sky-500/30 sm:shadow-lg"
+                                        className="bg-clr-bg p-size-sm lg:p-size-md gap-size-xs group/card border-clr-bg-dark shadow-clr-bg-extra-dark flex flex-col border-4 shadow-md duration-300 hover:border-sky-500/30 hover:shadow-sky-500/30 sm:shadow-lg dark:shadow-none"
                                         spotlightColor={spotlight}
                                     >
                                         <div className="bg-clr-bg-dark w-fit rounded-lg p-1 transition-colors duration-300 group-hover/card:bg-sky-500/40">

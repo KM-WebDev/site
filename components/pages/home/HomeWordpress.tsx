@@ -9,8 +9,7 @@ import { IoPricetagOutline, IoRocketOutline } from "react-icons/io5";
 import { AiOutlineRise } from "react-icons/ai";
 import { DotBackground } from "@/third-party/aceternity-ui/DotBackground";
 import { TextShimmer } from "@/third-party/motion-primitives/TextShimmer";
-import { GlowEffect } from "@/third-party/motion-primitives/GlowEffect";
-import ShowMoreTextBox from "@/components/ui/ShowMoreTextBox";
+
 type Point = {
     title: string;
     text: string;

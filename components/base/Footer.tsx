@@ -30,7 +30,7 @@ interface SocialProps {
 
 export default function Footer({ Logo }: FooterProps) {
     return (
-        <footer className="bg-clr-bg-extra-dark/40 border-t py-10">
+        <footer className="bg-clr-bg-extra-dark border-t py-10">
             <Section className="gap-10">
                 <FooterTopContent Logo={Logo} />
                 <FooterBottomContent />
@@ -74,7 +74,7 @@ function FooterCTA({ Logo }: FooterLogoProps) {
     return (
         <div
             className={cn(
-                "bg-clr-bg/5 border-clr-text/10 flex h-fit flex-col gap-5 rounded-xl border p-5",
+                "bg-clr-bg-light border-clr-text/10 flex h-fit flex-col gap-5 rounded-xl border p-5",
                 "md:max-w-sm"
             )}
         >

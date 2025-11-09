@@ -6,7 +6,6 @@ import Text from "@/components/base/Text";
 import { GridBackground } from "@/third-party/aceternity-ui/GridBackground";
 import { Safari } from "@/third-party/magic-ui/Safari";
 import { InView } from "@/third-party/motion-primitives/InView";
-import Image from "next/image";
 
 export default function HomeHero() {
     return (
@@ -102,30 +101,7 @@ export default function HomeHero() {
                     </div>
                 </InView>
 
-                <InView
-                    once={true}
-                    variants={{
-                        hidden: {
-                            opacity: 0,
-                            y: 30,
-                            scale: 0.95,
-                            filter: "blur(4px)",
-                        },
-                        visible: {
-                            opacity: 1,
-                            y: 0,
-                            scale: 1,
-                            filter: "blur(0px)",
-                        },
-                    }}
-                    transition={{
-                        duration: 0.3,
-                        ease: "easeInOut",
-                        delay: 0.6,
-                    }}
-                    viewOptions={{ margin: "0px 0px 0px 0px" }}
-                >
-                    {/* <div className="p-size-xs rounded-[24px] bg-sky-800/30">
+                {/* <div className="p-size-xs rounded-[24px] bg-sky-800/30">
                         <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl">
                             <Image
                                 src={"/test-hero.png"}
@@ -135,11 +111,37 @@ export default function HomeHero() {
                             />
                         </div>
                     </div> */}
-                </InView>
             </Section.Content>
-            <div className="px-size-sm flex w-full justify-center">
-                <Safari imageSrc="/template-hero.webp" className="max-w-7xl" />
-            </div>
+            <InView
+                once={true}
+                variants={{
+                    hidden: {
+                        opacity: 0,
+                        y: 30,
+                        scale: 0.95,
+                        filter: "blur(4px)",
+                    },
+                    visible: {
+                        opacity: 1,
+                        y: 0,
+                        scale: 1,
+                        filter: "blur(0px)",
+                    },
+                }}
+                transition={{
+                    duration: 0.3,
+                    ease: "easeInOut",
+                    delay: 0.6,
+                }}
+                viewOptions={{ margin: "0px 0px 0px 0px" }}
+                className="px-size-sm pt-size-md flex w-full justify-center"
+            >
+                <Safari
+                    url="https:\\"
+                    imageSrc="/template-hero.webp"
+                    className="max-w-7xl"
+                />
+            </InView>
         </Section>
     );
 }

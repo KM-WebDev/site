@@ -18,6 +18,7 @@ export type InViewProps = {
     viewOptions?: UseInViewOptions;
     as?: React.ElementType;
     once?: boolean;
+    className?: string;
 };
 
 const defaultVariants = {
@@ -31,6 +32,7 @@ export function InView({
     transition,
     viewOptions,
     as = "div",
+    className,
     once,
 }: InViewProps) {
     const ref = useRef(null);
@@ -42,6 +44,7 @@ export function InView({
 
     return (
         <MotionComponent
+            className={className}
             ref={ref}
             initial="hidden"
             onAnimationComplete={() => {

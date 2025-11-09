@@ -6,7 +6,7 @@ import { ThemeProvider } from "next-themes";
 export default function AppProviders({ children }: BasicComponentProps) {
     return (
         <>
-            <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+            <ThemeProvider defaultTheme="system" attribute="class">
                 <BreakpointProvider>
                     <NavigationProvider>
                         <>{children}</>

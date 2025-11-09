@@ -1,43 +1,16 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
-/* :root {
-    --clr-bg-light: var(--color-neutral-50);
-    --clr-bg: var(--color-neutral-50);
-    --clr-bg-dark: var(--color-neutral-100);
-    --clr-bg-extra-dark: var(--color-neutral-200);
-    --clr-border: var(--color-neutral-200);
-    --clr-text-extra-muted: var(--color-neutral-400);
-    --clr-text-muted: var(--color-neutral-500);
-    --clr-text-light: var(--color-neutral-700);
-    --clr-text: var(--color-neutral-800);
-} */
-/* 
-@layer theme {
-    .light {
-        --clr-bg-light: var(--color-neutral-50);
-        --clr-bg: var(--color-neutral-50);
-        --clr-bg-dark: var(--color-neutral-100);
-        --clr-bg-extra-dark: var(--color-neutral-200);
-        --clr-border: var(--color-neutral-200);
-        --clr-text-extra-muted: var(--color-neutral-400);
-        --clr-text-muted: var(--color-neutral-500);
-        --clr-text-light: var(--color-neutral-700);
-        --clr-text: var(--color-neutral-800);
-    }
-
-    
-} */
 
 @theme {
-    --color-clr-bg-light: var(--color-neutral-50);
-    --color-clr-bg: var(--color-neutral-50);
-    --color-clr-bg-dark: var(--color-neutral-100);
-    --color-clr-bg-extra-dark: var(--color-neutral-200);
-    --color-clr-border: var(--color-neutral-200);
-    --color-clr-text-extra-muted: var(--color-neutral-400);
-    --color-clr-text-muted: var(--color-neutral-500);
-    --color-clr-text-light: var(--color-neutral-700);
-    --color-clr-text: var(--color-neutral-800);
+    --color-clr-bg-light: var(--color-slate-50);
+    --color-clr-bg: var(--color-slate-50);
+    --color-clr-bg-dark: var(--color-slate-100);
+    --color-clr-bg-extra-dark: var(--color-slate-200);
+    --color-clr-border: var(--color-slate-200);
+    --color-clr-text-extra-muted: var(--color-slate-400);
+    --color-clr-text-muted: var(--color-slate-500);
+    --color-clr-text-light: var(--color-slate-700);
+    --color-clr-text: var(--color-slate-800);
 }
 
 @theme inline {
@@ -81,22 +54,20 @@
 
 @layer theme {
     .dark {
-        --color-clr-bg-light: var(--color-neutral-950);
-        --color-clr-bg: var(--color-neutral-800);
-        --color-clr-bg-dark: var(--color-neutral-700);
-        --color-clr-bg-extra-dark: var(--color-neutral-600);
-        --color-clr-border: var(--color-neutral-200);
-        --color-clr-text-extra-muted: var(--color-neutral-400);
-        --color-clr-text-muted: var(--color-neutral-300);
-        --color-clr-text-light: var(--color-neutral-200);
-        --color-clr-text: var(--color-neutral-100);
-        --color-clr-text-strong: var(--color-neutral-50);
+        --color-clr-bg-light: var(--color-slate-950);
+        --color-clr-bg: var(--color-slate-800);
+        --color-clr-bg-dark: var(--color-slate-700);
+        --color-clr-bg-extra-dark: var(--color-slate-600);
+        --color-clr-border: var(--color-slate-200);
+        --color-clr-text-extra-muted: var(--color-slate-400);
+        --color-clr-text-muted: var(--color-slate-300);
+        --color-clr-text-light: var(--color-slate-200);
+        --color-clr-text: var(--color-slate-100);
+        --color-clr-text-strong: var(--color-slate-50);
     }
 }
 
 body {
-    /* color: var(--clr-text); */
-    /* background-color: var(--clr-bg-light); */
     font-family: var(--font-inter);
     font-family: Arial, Helvetica, sans-serif;
 }

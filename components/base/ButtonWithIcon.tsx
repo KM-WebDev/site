@@ -1,10 +1,23 @@
 import { cn } from "@/lib/utils";
-import Button, { ButtonProps } from "./Button";
-import { ReactNode } from "react";
+import Button from "./Button";
+import { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from "react";
 
-interface ButtonWithIconProps extends ButtonProps {
+type ButtonAsButton = {
+    as?: "button";
+    href?: never;
+} & ButtonHTMLAttributes<HTMLButtonElement>;
+
+type ButtonAsLink = {
+    as: "link";
+    href: string;
+} & AnchorHTMLAttributes<HTMLAnchorElement>;
+
+type ButtonWithIconProps = (ButtonAsButton | ButtonAsLink) & {
     Icon: ReactNode;
-}
+    children?: ReactNode;
+    text?: string;
+    className?: string;
+};
 
 export default function ButtonWithIcon({
     className,

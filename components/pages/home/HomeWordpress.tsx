@@ -10,6 +10,7 @@ import { AiOutlineRise } from "react-icons/ai";
 import { DotBackground } from "@/third-party/aceternity-ui/DotBackground";
 import { TextShimmer } from "@/third-party/motion-primitives/TextShimmer";
 import { GlowEffect } from "@/third-party/motion-primitives/GlowEffect";
+import ShowMoreTextBox from "@/components/ui/ShowMoreTextBox";
 type Point = {
     title: string;
     text: string;
@@ -72,7 +73,7 @@ export default function HomeWordpress() {
     return (
         <Section className="py-size-xl relative">
             <DotBackground />
-            <Section.Content className="xl:gap-size-2xl gap-size-xl z-100">
+            <Section.Content className="xl:gap-size-2xl gap-size-xl z-100 w-full">
                 <div className="gap-size-sm mx-auto flex max-w-3xl flex-col text-center">
                     <Heading semantic="h2">
                         <TextShimmer
@@ -93,7 +94,7 @@ export default function HomeWordpress() {
                     </Text>
                 </div>
 
-                <div className="flex flex-col">
+                <div className="flex w-full flex-col">
                     {/* <div className="flex w-full justify-between">
                         <Heading semantic="h3">Next.js</Heading>
                         <Heading semantic="h3">Wordpress</Heading>
@@ -107,7 +108,7 @@ export default function HomeWordpress() {
 
 function Table() {
     return (
-        <div className="md:gap-size-lg gap-size-md flex flex-col">
+        <div className="md:gap-size-lg gap-size-md flex w-full flex-col">
             {prosList.map((pros, i) => {
                 const cons = consList[i];
                 const Icon = categoryList[i].icon;
@@ -115,7 +116,7 @@ function Table() {
                 return (
                     <div
                         key={pros.title}
-                        className="gap-size-xs bg-clr-bg-dark py-size-sm xl:px-size-sm px-size-xs shadow-clr-bg-extra-dark relative flex flex-col rounded-2xl shadow-lg md:gap-0"
+                        className="gap-size-xs bg-clr-bg-dark py-size-sm xl:px-size-sm px-size-xs shadow-clr-bg-extra-dark relative flex w-full flex-col rounded-2xl shadow-lg md:gap-0"
                     >
                         <Heading
                             semantic="h4"
@@ -123,7 +124,7 @@ function Table() {
                             className="text-center"
                             muted
                         />
-                        <div className="md:gap-size-sm lg:gap-size-lg gap-size-lg grid rounded-2xl md:auto-rows-fr md:grid-cols-[1fr_auto_1fr] md:items-stretch">
+                        <div className="md:gap-size-sm lg:gap-size-lg gap-size-lg grid w-full rounded-2xl md:auto-rows-fr md:grid-cols-[1fr_auto_1fr] md:items-stretch">
                             <Pros point={pros} />
                             <div className="flex h-full flex-col items-center justify-center max-md:-order-1">
                                 <Icon className="text-clr-text-extra-muted text-4xl md:text-5xl lg:text-6xl" />
@@ -139,13 +140,15 @@ function Table() {
 
 function Pros({ point }: { point: Point }) {
     return (
-        <div className="relative flex flex-col">
+        <div className="relative flex w-full flex-col">
             <Heading styling="h4" muted className="absolute bottom-full">
                 Next.js
             </Heading>
             <Point className="border-green-500/20 bg-green-200/30 shadow-green-500/20">
                 <Heading semantic="h4" styling="h3" text={point.title} />
-                <Text text={point.text} className="leading-normal" muted />
+                <Text className="leading-normal" muted>
+                    {point.text}
+                </Text>
             </Point>
         </div>
     );
@@ -153,7 +156,7 @@ function Pros({ point }: { point: Point }) {
 
 function Cons({ point }: { point: Point }) {
     return (
-        <div className="relative flex flex-col">
+        <div className="relative flex w-full flex-col">
             <Heading
                 styling="h4"
                 className="absolute right-0 bottom-full"

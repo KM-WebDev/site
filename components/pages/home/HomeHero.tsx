@@ -135,9 +135,11 @@ export default function HomeHero() {
                             />
                         </div>
                     </div> */}
-                    <Safari imageSrc="/template-hero.webp" />
                 </InView>
             </Section.Content>
+            <div className="px-size-sm flex w-full justify-center">
+                <Safari imageSrc="/template-hero.webp" className="max-w-7xl" />
+            </div>
         </Section>
     );
 }

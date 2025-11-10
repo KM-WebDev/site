@@ -27,7 +27,7 @@ export default function ThemeSwitcher() {
     if (!mounted) return null;
 
     return (
-        <div className="flex items-center gap-2 rounded-full bg-gray-200 p-1">
+        <div className="bg-clr-bg-extra-dark flex items-center gap-2 rounded-full p-1">
             {options.map((opt, i) => {
                 const isActive = opt === theme;
 

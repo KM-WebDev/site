@@ -6,10 +6,11 @@ import ThemeSwitcher from "../ThemeSwitcher";
 import Section from "./Section";
 import Button from "./Button";
 import Heading from "./Heading";
-import Text from "./Text";
 
 import { ReactNode } from "react";
 import Link from "next/link";
+import Text from "@/components/base/Text";
+import { LazyElectricBorder } from "../ui/LazyElectricBorder";
 
 interface FooterProps {
     Logo: ReactNode;
@@ -29,7 +30,7 @@ interface SocialProps {
 
 export default function Footer({ Logo }: FooterProps) {
     return (
-        <footer className="bg-clr-bg-extra-dark border-t py-10">
+        <footer className="border-clr-border border-t py-10">
             <Section className="gap-10">
                 <FooterTopContent Logo={Logo} />
                 <FooterBottomContent />
@@ -52,10 +53,10 @@ function FooterTopContent({ Logo }: FooterProps) {
 function FooterBottomContent() {
     return (
         <Section.Content className="flex w-full flex-col-reverse items-center justify-between gap-5 sm:flex-row">
-            <p className="text-clr-text-muted">
+            <Text className="text-clr-text-extra-muted" size="small">
                 &copy; {new Date().getFullYear()} KM-WebDev. Wszelkie prawa
                 zastrzeżone.
-            </p>
+            </Text>
 
             <div className="flex gap-10">
                 <div className="flex items-center gap-4">
@@ -71,22 +72,27 @@ function FooterBottomContent() {
 
 function FooterCTA({ Logo }: FooterLogoProps) {
     return (
-        <div
+        <LazyElectricBorder
+            color="#7df9ff"
+            speed={1}
+            chaos={0.5}
+            thickness={2}
+            style={{ borderRadius: 16 }}
             className={cn(
-                "bg-clr-bg-light border-clr-text/10 flex h-fit flex-col gap-5 rounded-xl border p-5",
+                "bg-clr-bg-light border-clr-border flex h-fit flex-col gap-5 rounded-xl border p-5",
                 "md:max-w-sm"
             )}
         >
             <FooterLogo Logo={Logo} />
             <div className="flex flex-col gap-3">
                 <Heading semantic="h6" text="Bezpłatny audyt twojej strony" />
-                <Text semantic="p" muted>
+                <Text muted className="leading-normal">
                     Przeprowadzimy pełną inspekcję strony i pokażemy jak ją
                     usprawnić
                 </Text>
                 <Button text="Zamów teraz" className="w-fit" />
             </div>
-        </div>
+        </LazyElectricBorder>
     );
 }
 
@@ -157,7 +163,7 @@ function FooterNavigation({ routes }: { routes: NavigationRoutes }) {
                         href={route.link}
                         className="transition-colors hover:text-sky-500"
                     >
-                        {route.name}
+                        <Text text={route.name} muted />
                     </Link>
                 </li>
             ))}

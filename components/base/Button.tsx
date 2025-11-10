@@ -23,7 +23,7 @@ export default function Button({
     ...props
 }: ButtonProps) {
     const className = cn(
-        "group/button relative flex cursor-pointer items-center justify-center",
+        "group/button relative flex cursor-pointer items-center justify-center gap-4 rounded-xl px-6 py-2 text-base font-medium transition-all duration-200",
         capitalize && "capitalize",
         variants[variant],
         passedClassName

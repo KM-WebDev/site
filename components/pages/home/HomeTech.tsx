@@ -187,7 +187,7 @@ export default function HomeTech() {
                                         className="bg-clr-bg p-size-sm lg:p-size-md gap-size-xs group/card border-clr-bg-dark shadow-clr-bg-extra-dark relative flex flex-col border-4 shadow-md duration-300 hover:border-sky-500/30 hover:shadow-sky-500/30 sm:shadow-lg dark:shadow-transparent dark:hover:shadow-[2px_2px_15px_5px_var(--color-sky-500)]"
                                         spotlightColor={spotlight}
                                     >
-                                        <div className="to-clr-bg-dark/80 from-clr-bg/0 absolute inset-0 bg-linear-to-tr" />
+                                        <div className="to-clr-bg-extra-dark/70 via-clr-bg-light/30 from-clr-bg/10 absolute inset-0 bg-linear-to-tr" />
                                         <div className="bg-clr-bg-dark z-10 w-fit rounded-lg p-1 transition-colors duration-300 group-hover/card:bg-sky-500/40">
                                             <card.Icon className="text-clr-text-extra-muted text-5xl transition-colors duration-300 group-hover/card:text-white md:text-5xl xl:text-6xl" />
                                         </div>

@@ -115,16 +115,17 @@ function Table() {
                 return (
                     <div
                         key={pros.title}
-                        className="gap-size-xs bg-clr-bg-dark dark:bg-clr-bg py-size-sm xl:px-size-sm px-size-xs shadow-clr-bg-extra-dark relative flex w-full flex-col overflow-hidden rounded-2xl shadow-lg md:gap-0 dark:shadow-none"
+                        className="gap-size-xs bg-clr-bg py-size-sm xl:px-size-sm px-size-xs shadow-clr-bg-extra-dark relative flex w-full flex-col overflow-hidden rounded-2xl shadow-lg md:gap-0 dark:shadow-none"
                     >
-                        <div className="to-clr-bg-dark/80 from-clr-bg/0 absolute inset-0 bg-linear-to-tr" />
+                        {/* <div className="from-clr-bg-light/30 via-clr-bg-light/0 to-clr-bg-light/30 absolute inset-0 bg-linear-to-tr" /> */}
+                        <div className="to-clr-bg-extra-dark/70 via-clr-bg-light/50 from-clr-bg-extra-dark/40 absolute inset-0 bg-linear-to-tl" />
                         <Heading
                             semantic="h4"
                             text={categoryList[i].name}
-                            className="text-center"
+                            className="z-10 text-center"
                             muted
                         />
-                        <div className="md:gap-size-sm lg:gap-size-lg gap-size-lg grid w-full rounded-2xl md:auto-rows-fr md:grid-cols-[1fr_auto_1fr] md:items-stretch">
+                        <div className="md:gap-size-sm lg:gap-size-lg gap-size-lg z-10 grid w-full rounded-2xl md:auto-rows-fr md:grid-cols-[1fr_auto_1fr] md:items-stretch">
                             <Pros point={pros} />
                             <div className="flex h-full flex-col items-center justify-center max-md:-order-1">
                                 <Icon className="text-clr-text-extra-muted text-4xl md:text-5xl lg:text-6xl" />
@@ -146,7 +147,7 @@ function Pros({ point }: { point: Point }) {
             </Heading>
             {/* <Point className="border-green-500/20 bg-green-200/30 shadow-green-500/20 dark:bg-green-400/30"> */}
             <Point className="relative overflow-hidden border-green-500/50 shadow-green-500/20">
-                <div className="absolute inset-0 bg-linear-to-tr from-green-500/10 via-green-50/5 to-green-500/20" />
+                <div className="absolute inset-0 bg-linear-to-tr from-green-500/15 via-green-500/10 to-green-500/20" />
                 <Heading
                     semantic="h4"
                     styling="h3"
@@ -172,7 +173,7 @@ function Cons({ point }: { point: Point }) {
                 Wordpress
             </Heading>
             <Point className="relative overflow-hidden border-red-500/50 shadow-red-500/20 max-md:ml-auto">
-                <div className="absolute inset-0 bg-linear-to-tr from-red-500/10 via-red-50/5 to-red-500/20" />
+                <div className="absolute inset-0 bg-linear-to-tr from-red-500/15 via-red-500/10 to-red-500/20" />
                 <Heading
                     semantic="h4"
                     styling="h3"

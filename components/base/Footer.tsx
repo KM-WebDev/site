@@ -58,8 +58,8 @@ function FooterBottomContent() {
                 zastrzeżone.
             </Text>
 
-            <div className="flex gap-10">
-                <div className="flex items-center gap-4">
+            <div className="flex gap-5">
+                <div className="flex items-center gap-2">
                     <FooterSocial link="https://discord.com" />
                     <FooterSocial link="https://github.com/KM-WebDev" />
                 </div>
@@ -106,9 +106,9 @@ function FooterSocial({ link }: SocialProps) {
     const brand = getBrandFromUrl(link);
 
     return (
-        <a href={link} className="h-5 w-5">
+        <a href={link} className="flex h-full w-full items-center px-1">
             <div
-                className="h-full w-full"
+                className="h-5 w-5"
                 style={{
                     WebkitMaskImage: `url(https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@13.21.0/icons/${brand}.svg)`,
                     maskImage: `url(https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@13.21.0/icons/${brand}.svg)`,

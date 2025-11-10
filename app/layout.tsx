@@ -24,7 +24,7 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     const Logo = (
-        <Text semantic="span" size="large" className="font-heading">
+        <Text semantic="span" size="xlarge" className="font-heading">
             KM-WebDev
         </Text>
     );

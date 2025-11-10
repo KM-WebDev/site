@@ -32,6 +32,8 @@ export default function Header({ Logo }: HeaderProps) {
                             text="Zamów Audyt"
                             variant="transparent"
                             className="text-sm"
+                            as="link"
+                            href="/audit"
                         />
                         <Button text="Zakup Stronę" className="text-sm" />
                     </div>

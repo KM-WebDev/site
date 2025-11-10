@@ -9,7 +9,7 @@ import { InView } from "@/third-party/motion-primitives/InView";
 
 export default function HomeHero() {
     return (
-        <Section className="bg-clr-bg-light py-size-xl relative">
+        <Section className="py-size-xl relative">
             <HeaderHeightPadding />
             <GridBackground />
             <Section.Content className="gap-size-md relative flex">

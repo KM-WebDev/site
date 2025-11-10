@@ -48,7 +48,7 @@ const cards = [
 const spotlight = "rgba(0, 166, 244, 0.25)";
 export default function HomeTech() {
     return (
-        <Section className="py-size-4xl bg-clr-bg-light">
+        <Section className="bg-clr-bg-light py-size-4xl">
             <Section.Content className="gap-size-xl">
                 <div className="gap-size-sm mx-auto flex max-w-3xl flex-col text-center">
                     {/* <InView
@@ -184,19 +184,21 @@ export default function HomeTech() {
                                     }}
                                 >
                                     <SpotlightCard
-                                        className="bg-clr-bg p-size-sm lg:p-size-md gap-size-xs group/card border-clr-bg-dark shadow-clr-bg-extra-dark flex flex-col border-4 shadow-md duration-300 hover:border-sky-500/30 hover:shadow-sky-500/30 sm:shadow-lg dark:shadow-none"
+                                        className="bg-clr-bg p-size-sm lg:p-size-md gap-size-xs group/card border-clr-bg-dark shadow-clr-bg-extra-dark relative flex flex-col border-4 shadow-md duration-300 hover:border-sky-500/30 hover:shadow-sky-500/30 sm:shadow-lg dark:shadow-transparent dark:hover:shadow-[2px_2px_15px_5px_var(--color-sky-500)]"
                                         spotlightColor={spotlight}
                                     >
-                                        <div className="bg-clr-bg-dark w-fit rounded-lg p-1 transition-colors duration-300 group-hover/card:bg-sky-500/40">
+                                        <div className="to-clr-bg-dark/80 from-clr-bg/0 absolute inset-0 bg-linear-to-tr" />
+                                        <div className="bg-clr-bg-dark z-10 w-fit rounded-lg p-1 transition-colors duration-300 group-hover/card:bg-sky-500/40">
                                             <card.Icon className="text-clr-text-extra-muted text-5xl transition-colors duration-300 group-hover/card:text-white md:text-5xl xl:text-6xl" />
                                         </div>
                                         <Heading
                                             semantic="h3"
                                             text={card.title}
+                                            className="z-10"
                                         />
                                         <Text
                                             text={card.text}
-                                            className="leading-normal"
+                                            className="z-10 leading-normal"
                                             muted
                                         />
                                     </SpotlightCard>

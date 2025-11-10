@@ -10,11 +10,6 @@ export default function HomeTest() {
                 <Heading semantic="h2">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 </Heading>
-                {/* <MacbookScroll
-                    showGradient
-                    src="/template-hero.webp"
-                    title={<span></span>}
-                /> */}
             </Section.Content>
         </Section>
     );

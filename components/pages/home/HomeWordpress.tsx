@@ -115,8 +115,9 @@ function Table() {
                 return (
                     <div
                         key={pros.title}
-                        className="gap-size-xs bg-clr-bg-dark py-size-sm xl:px-size-sm px-size-xs shadow-clr-bg-extra-dark relative flex w-full flex-col rounded-2xl shadow-lg md:gap-0"
+                        className="gap-size-xs bg-clr-bg-dark dark:bg-clr-bg py-size-sm xl:px-size-sm px-size-xs shadow-clr-bg-extra-dark relative flex w-full flex-col overflow-hidden rounded-2xl shadow-lg md:gap-0 dark:shadow-none"
                     >
+                        <div className="to-clr-bg-dark/80 from-clr-bg/0 absolute inset-0 bg-linear-to-tr" />
                         <Heading
                             semantic="h4"
                             text={categoryList[i].name}
@@ -143,9 +144,16 @@ function Pros({ point }: { point: Point }) {
             <Heading styling="h4" muted className="absolute bottom-full">
                 Next.js
             </Heading>
-            <Point className="border-green-500/20 bg-green-200/30 shadow-green-500/20">
-                <Heading semantic="h4" styling="h3" text={point.title} />
-                <Text className="leading-normal" muted>
+            {/* <Point className="border-green-500/20 bg-green-200/30 shadow-green-500/20 dark:bg-green-400/30"> */}
+            <Point className="relative overflow-hidden border-green-500/50 shadow-green-500/20">
+                <div className="absolute inset-0 bg-linear-to-tr from-green-500/10 via-green-50/5 to-green-500/20" />
+                <Heading
+                    semantic="h4"
+                    styling="h3"
+                    className="z-10"
+                    text={point.title}
+                />
+                <Text className="z-10 leading-normal" muted>
                     {point.text}
                 </Text>
             </Point>
@@ -163,9 +171,15 @@ function Cons({ point }: { point: Point }) {
             >
                 Wordpress
             </Heading>
-            <Point className="border-red-500/20 bg-red-200/30 shadow-red-500/20 max-md:ml-auto">
-                <Heading semantic="h4" styling="h3" text={point.title} />
-                <Text text={point.text} className="leading-normal" muted />
+            <Point className="relative overflow-hidden border-red-500/50 shadow-red-500/20 max-md:ml-auto">
+                <div className="absolute inset-0 bg-linear-to-tr from-red-500/10 via-red-50/5 to-red-500/20" />
+                <Heading
+                    semantic="h4"
+                    styling="h3"
+                    text={point.title}
+                    className="z-10"
+                />
+                <Text text={point.text} className="z-10 leading-normal" muted />
             </Point>
         </div>
     );

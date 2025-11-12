@@ -23,7 +23,7 @@ export default function HomeMobileFirst() {
                 </div>
 
                 <div className="gap-size-md flex h-full w-full flex-col max-xl:items-center xl:flex-row">
-                    <div className="gap-size-xs flex flex-col justify-center xl:text-end">
+                    <div className="flex flex-col justify-center xl:text-end">
                         <Heading styling="h1" className="max-xl:hidden">
                             2
                         </Heading>
@@ -31,7 +31,7 @@ export default function HomeMobileFirst() {
                             1
                         </Heading>
                         <Heading semantic="h3">Ogromny rynek mobilny</Heading>
-                        <Text muted>
+                        <Text muted size="small">
                             Lorem ipsum dolor sit, amet consectetur adipisicing
                             elit. Quae hic alias illo eos dolor provident sequi
                             reiciendis quasi animi sunt delectus cum corporis
@@ -49,12 +49,12 @@ export default function HomeMobileFirst() {
                             damping: 4.1,
                             mass: 0.2,
                         }}
-                        className="group relative h-full w-full max-w-md rounded-lg max-xl:-order-1"
+                        className="group relative h-full w-full max-w-md rounded-lg max-xl:-order-1 max-xl:max-w-[50%]"
                     >
                         <Iphone src="/strona.jpeg" className="" />
                     </Tilt>
                     <div className="gap-size-md flex flex-col justify-between">
-                        <div className="gap-size-xs flex flex-col">
+                        <div className="flex flex-col">
                             <Heading styling="h1" className="max-xl:hidden">
                                 1
                             </Heading>
@@ -64,7 +64,7 @@ export default function HomeMobileFirst() {
                             <Heading semantic="h3">
                                 Ogromny rynek mobilny
                             </Heading>
-                            <Text muted>
+                            <Text muted size="small">
                                 Lorem ipsum dolor sit, amet consectetur
                                 adipisicing elit. Quae hic alias illo eos dolor
                                 provident sequi reiciendis quasi animi sunt
@@ -72,12 +72,12 @@ export default function HomeMobileFirst() {
                                 enim, facere expedita?
                             </Text>
                         </div>
-                        <div className="gap-size-xs flex flex-col">
+                        <div className="flex flex-col">
                             <Heading styling="h1">3</Heading>
                             <Heading semantic="h3">
                                 Ogromny rynek mobilny
                             </Heading>
-                            <Text muted>
+                            <Text muted size="small">
                                 Lorem ipsum dolor sit, amet consectetur
                                 adipisicing elit. Quae hic alias illo eos dolor
                                 provident sequi reiciendis quasi animi sunt

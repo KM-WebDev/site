@@ -135,7 +135,7 @@ export default function HomeTech() {
                         </Heading>
                     </InView>
 
-                    <div className="gap-size-sm md:gap-size-md grid auto-rows-fr items-stretch md:grid-cols-2 xl:grid-cols-3">
+                    <div className="gap-size-xs md:gap-size-sm grid auto-rows-fr items-stretch md:grid-cols-2 xl:grid-cols-3">
                         {cards.map((card, i) => {
                             return (
                                 <InView
@@ -181,11 +181,11 @@ type Card = {
 function Card({ card }: { card: Card }) {
     return (
         <SpotlightCard
-            className="bg-clr-bg/60 p-size-sm lg:p-size-sm gap-size-xs group/card border-clr-border shadow-clr-bg-extra-dark relative flex flex-col border duration-300 hover:border-sky-500/30 hover:shadow-md hover:shadow-sky-500/30 hover:sm:shadow-lg dark:hover:shadow-[2px_2px_15px_5px_var(--color-sky-500)]"
+            className="bg-clr-bg/60 p-size-sm lg:p-size-sm md:gap-size-xs group/card border-clr-border/60 shadow-clr-bg-extra-dark relative flex flex-col border duration-300 hover:border-sky-500/30 hover:shadow-md hover:shadow-sky-500/30 hover:sm:shadow-lg dark:hover:shadow-[2px_2px_15px_0px_var(--color-sky-500)]"
             spotlightColor={spotlight}
         >
             {/* <div className="to-clr-bg-extra-dark/70 via-clr-bg-light/30 from-clr-bg/10 absolute inset-0 bg-linear-to-tr" /> */}
-            <div className="bg-clr-bg-dark/10 z-10 w-fit rounded-lg p-1 transition-colors duration-300 group-hover/card:bg-sky-500/40">
+            <div className="bg-clr-bg-dark/10 z-10 w-fit rounded-lg p-1 transition-colors duration-300 md:group-hover/card:bg-sky-500/40">
                 {card.Icon && (
                     <card.Icon className="text-clr-text-extra-muted text-5xl transition-colors duration-300 group-hover/card:text-white md:text-5xl xl:text-6xl" />
                 )}

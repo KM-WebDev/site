@@ -189,7 +189,7 @@ function Point({ children, className }: BasicComponentProps) {
     return (
         <div
             className={cn(
-                "p-size-sm gap-size-xs relative flex h-full flex-col rounded-2xl border shadow-lg max-md:w-[90%]",
+                "p-size-sm gap-size-xs relative flex h-full flex-col rounded-2xl border-4 shadow-lg max-md:w-[90%]",
                 className
             )}
         >

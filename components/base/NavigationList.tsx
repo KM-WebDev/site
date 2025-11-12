@@ -1,31 +1,59 @@
-import { NavigationRoutesEntry, routes } from "@/app/routes";
+import {
+    NavigationRoutesEntry,
+    NavigationRoutesEntryWithSubRoutes,
+    routes,
+} from "@/app/routes";
 import NavLink from "./NavLink";
 
-import { ReactNode, useMemo } from "react";
+import { ReactNode } from "react";
 import { BasicComponentProps } from "@/lib/types/global";
 
 type linkRenderer = (route: NavigationRoutesEntry) => ReactNode;
 
+type innerNavigationRenderer = (
+    route: NavigationRoutesEntryWithSubRoutes
+) => ReactNode;
+
 interface NavigationListProps extends BasicComponentProps {
     linkRenderer: linkRenderer;
+    innerNavigationRenderer: innerNavigationRenderer;
 }
+
+export function hasSubRoutes(
+    route: NavigationRoutesEntry
+): route is NavigationRoutesEntryWithSubRoutes {
+    return Array.isArray(route.subRoutes) && route.subRoutes.length > 0;
+}
+
 export default function NavigationList({
     className,
     linkRenderer,
+    innerNavigationRenderer,
 }: NavigationListProps) {
-    const Links = useMemo(
-        () => <GeneratedLinks linkRenderer={linkRenderer} />,
-        [linkRenderer]
+    return (
+        <ul className={className}>
+            <GeneratedLinks
+                linkRenderer={linkRenderer}
+                innerNavigationRenderer={innerNavigationRenderer}
+            />
+        </ul>
     );
-    return <ul className={className}>{Links}</ul>;
 }
 
-function GeneratedLinks({ linkRenderer }: { linkRenderer: linkRenderer }) {
+function GeneratedLinks({
+    linkRenderer,
+    innerNavigationRenderer,
+}: Pick<
+    NavigationListProps,
+    "linkRenderer" | "innerNavigationRenderer" | "className"
+>) {
     return routes.map((route) => {
+        const hasInnerRoutes = route.subRoutes && route.subRoutes.length > 0;
+
         return (
             <li key={route.name}>
-                {linkRenderer && linkRenderer(route)}
-                {!linkRenderer && (
+                {hasSubRoutes(route) && innerNavigationRenderer(route)}
+                {(!hasInnerRoutes && linkRenderer?.(route)) ?? (
                     <NavLink
                         closeNavOnClick={true}
                         route={route}

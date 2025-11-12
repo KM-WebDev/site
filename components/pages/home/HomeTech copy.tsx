@@ -11,9 +11,6 @@ import { IoShieldCheckmark } from "react-icons/io5";
 import { InView } from "@/third-party/motion-primitives/InView";
 import { TextShimmer } from "@/third-party/motion-primitives/TextShimmer";
 import { Highlighter } from "@/third-party/magic-ui/Highlither";
-import { IconType } from "react-icons/lib";
-import { FaPlus } from "react-icons/fa6";
-import ButtonBase from "@/components/base/ButtonBase";
 
 const cards = [
     {
@@ -54,6 +51,29 @@ export default function HomeTech() {
         <Section className="bg-clr-bg-light py-size-4xl">
             <Section.Content className="gap-size-xl">
                 <div className="gap-size-sm mx-auto flex max-w-3xl flex-col text-center">
+                    {/* <InView
+                        variants={{
+                            hidden: {
+                                opacity: 0,
+                                y: 30,
+                                scale: 0.95,
+                                filter: "blur(4px)",
+                            },
+                            visible: {
+                                opacity: 1,
+                                y: 0,
+                                scale: 1,
+                                filter: "blur(0px)",
+                            },
+                        }}
+                        transition={{
+                            duration: 0.3,
+                            ease: "easeInOut",
+                            delay: 0,
+                        }}
+                        viewOptions={{ margin: "0px 0px -50px 0px" }}
+                        once={true}
+                    > */}
                     <Heading semantic="h2">
                         Co wyróżnia{" "}
                         <Highlighter color="var(--color-sky-300)" isView={true}>
@@ -61,6 +81,7 @@ export default function HomeTech() {
                         </Highlighter>{" "}
                         internetowe od konkurencji?
                     </Heading>
+                    {/* </InView> */}
                     <InView
                         once={true}
                         variants={{
@@ -162,7 +183,25 @@ export default function HomeTech() {
                                         margin: "0px 0px 0px 0px",
                                     }}
                                 >
-                                    <Card card={card} />
+                                    <SpotlightCard
+                                        className="bg-clr-bg p-size-sm lg:p-size-md gap-size-xs group/card border-clr-bg-dark shadow-clr-bg-extra-dark relative flex flex-col border-4 shadow-md duration-300 hover:border-sky-500/30 hover:shadow-sky-500/30 sm:shadow-lg dark:shadow-transparent dark:hover:shadow-[2px_2px_15px_5px_var(--color-sky-500)]"
+                                        spotlightColor={spotlight}
+                                    >
+                                        {/* <div className="to-clr-bg-extra-dark/70 via-clr-bg-light/30 from-clr-bg/10 absolute inset-0 bg-linear-to-tr" /> */}
+                                        <div className="bg-clr-bg-dark z-10 w-fit rounded-lg p-1 transition-colors duration-300 group-hover/card:bg-sky-500/40">
+                                            <card.Icon className="text-clr-text-extra-muted text-5xl transition-colors duration-300 group-hover/card:text-white md:text-5xl xl:text-6xl" />
+                                        </div>
+                                        <Heading
+                                            semantic="h3"
+                                            text={card.title}
+                                            className="z-10"
+                                        />
+                                        <Text
+                                            text={card.text}
+                                            className="z-10 leading-normal"
+                                            muted
+                                        />
+                                    </SpotlightCard>
                                 </InView>
                             );
                         })}
@@ -170,43 +209,5 @@ export default function HomeTech() {
                 </div>
             </Section.Content>
         </Section>
-    );
-}
-
-type Card = {
-    title: string;
-    text: string;
-    Icon: IconType;
-};
-function Card({ card }: { card: Card }) {
-    return (
-        <SpotlightCard
-            className="bg-clr-bg/60 p-size-sm lg:p-size-sm gap-size-xs group/card border-clr-border shadow-clr-bg-extra-dark relative flex flex-col border duration-300 hover:border-sky-500/30 hover:shadow-md hover:shadow-sky-500/30 hover:sm:shadow-lg dark:hover:shadow-[2px_2px_15px_5px_var(--color-sky-500)]"
-            spotlightColor={spotlight}
-        >
-            {/* <div className="to-clr-bg-extra-dark/70 via-clr-bg-light/30 from-clr-bg/10 absolute inset-0 bg-linear-to-tr" /> */}
-            <div className="bg-clr-bg-dark/10 z-10 w-fit rounded-lg p-1 transition-colors duration-300 group-hover/card:bg-sky-500/40">
-                {card.Icon && (
-                    <card.Icon className="text-clr-text-extra-muted text-5xl transition-colors duration-300 group-hover/card:text-white md:text-5xl xl:text-6xl" />
-                )}
-            </div>
-            <Heading
-                semantic="h3"
-                styling="h4"
-                text={card.title}
-                className="z-10"
-            />
-            <div className="gap-size-sm flex">
-                <Text
-                    text={card.text}
-                    className="z-10 leading-normal"
-                    size="small"
-                    muted
-                />
-                <ButtonBase className="border-clr-bg-dark hover:bg-clr-bg-dark aspect-square cursor-pointer self-end rounded-full border px-1 transition-colors">
-                    <FaPlus className="text-clr-text text-[10px]" />
-                </ButtonBase>
-            </div>
-        </SpotlightCard>
     );
 }

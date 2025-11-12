@@ -5,6 +5,7 @@ import { NavigationContext } from "../../context/NavigationProvider";
 import { BasicComponentProps } from "@/lib/types/global";
 import { cn } from "@/lib/utils";
 import { createPortal } from "react-dom";
+import Hamburger from "hamburger-react";
 
 interface HeaderContainerProps {
     children: ReactNode;
@@ -65,9 +66,8 @@ export function HeaderNavigation({
     return (
         <nav
             className={cn(
-                "",
-                isNavOpen ? classNameOnOpen : classNameOnClose,
-                className
+                className,
+                isNavOpen ? classNameOnOpen : classNameOnClose
             )}
         >
             {isNavOpen &&
@@ -110,5 +110,27 @@ function Overlay({
             }}
             onClick={onClick}
         />
+    );
+}
+
+interface NavigationToggleButton {
+    className?: string;
+    size?: number;
+}
+
+export function NavigationToggleButton({
+    className,
+    size = 24,
+}: NavigationToggleButton) {
+    const { isNavOpen, toggleNav } = useContext(NavigationContext);
+
+    return (
+        <button
+            type="button"
+            className={cn("", className)}
+            aria-label="toggle menu"
+        >
+            <Hamburger size={size} toggled={isNavOpen} onToggle={toggleNav} />
+        </button>
     );
 }

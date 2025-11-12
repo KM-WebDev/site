@@ -22,11 +22,14 @@ export default function Button({
     className: passedClassName,
     ...props
 }: ButtonProps) {
-    const className = cn(
-        "group/button relative flex cursor-pointer items-center justify-center gap-4 rounded-xl px-6 py-2 text-base font-medium transition-all duration-200",
+    const className =
+        "group/button relative flex cursor-pointer items-center justify-center gap-4  px-6 py-2  font-medium transition-all duration-200 text-sm rounded-full";
+    const combinedClasses = cn(
+        className,
         capitalize && "capitalize",
         variants[variant],
         passedClassName
     );
-    return <ButtonBase className={className} {...props} />;
+
+    return <ButtonBase className={combinedClasses} {...props} />;
 }

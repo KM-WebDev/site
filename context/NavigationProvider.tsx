@@ -40,12 +40,12 @@ export default function NavigationProvider({ children }: Props) {
     const closeNav = useCallback(() => setIsNavOpen(false), []);
     const toggleNav = useCallback(() => setIsNavOpen((x) => !x), []);
 
-    useEffect(() => {
-        document.addEventListener(
-            "scroll",
-            () => (scrollRef.current = window.scrollY)
-        );
-    });
+    // useEffect(() => {
+    //     document.addEventListener(
+    //         "scroll",
+    //         () => (scrollRef.current = window.scrollY)
+    //     );
+    // });
 
     useEffect(() => {
         if (isNavOpen) {

@@ -22,7 +22,7 @@ const mutedVariants: Record<variant, string> = {
 
 const sizes: Record<size, string> = {
     small: "text-sm",
-    normal: "text-base leading-loose",
+    normal: "text-base",
     large: "text-lg",
     xlarge: "text-xl",
 };
